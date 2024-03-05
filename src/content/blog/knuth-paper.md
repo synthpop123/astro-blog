@@ -9,7 +9,7 @@ tags:
   - Algorithm
   - Math
   - Paper
-description: AstroPaper with the enhancements of Astro v2. Type-safe markdown contents, bug fixes and better dev experience etc.
+description: "Reading notes on 「Mathematical Analysis of Algorithms」 by Donald Knuth"
 ---
 
 ## Table of contents
@@ -116,7 +116,7 @@ $$
 H_{n}=1+\frac{1}{2}+\cdots+\frac{1}{n} \quad \text { and } \quad H_{n}^{(2)}=1+\frac{1}{4}+\cdots+\frac{1}{n^{2}}
 $$
 
-接下来我们同样可以对 a 的值进行分析。当循环变量 `j = q(i)` 时，*k* 一直往后执行到 $q(i + r)$，满足 $q(i+r)<q(i)$ 抑或 $q(i)$ 为环的头元素，因此会从 $q(i)$ 到 $q(i + r)$ 执行运算，于是，令：
+接下来我们同样可以对 a 的值进行分析。当循环变量 `j = q(i)` 时，_k_ 一直往后执行到 $q(i + r)$，满足 $q(i+r)<q(i)$ 抑或 $q(i)$ 为环的头元素，因此会从 $q(i)$ 到 $q(i + r)$ 执行运算，于是，令：
 
 $$
 y_{ij} = \begin{cases} 1, if\ q(i) < q(k)\ for\ i < k \leqslant j \\\ 0, \ otherwise \end {cases}
@@ -246,7 +246,7 @@ $$
 
 ### 问题提出
 
-给定一个一维数组 $a_1,a_2,\cdots,a_n$，在比较次数尽可能少的前提下找到数组中第 *t* 大的值。
+给定一个一维数组 $a_1,a_2,\cdots,a_n$，在比较次数尽可能少的前提下找到数组中第 _t_ 大的值。
 
 ### 算法设计
 
