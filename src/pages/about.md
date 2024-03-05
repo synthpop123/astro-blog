@@ -19,7 +19,7 @@ title: "About"
 - Twitter: [@whoamamamiii](https://twitter.com/whoamamamiii)
 - Telegram: [@lkwtg](https://twitter.com/whoamamamiii)
 
-## Skills and tools:
+## Skills and tools
 
 ![](@assets/images/tech-skills.png)
 
