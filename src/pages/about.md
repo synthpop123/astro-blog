@@ -22,3 +22,6 @@ title: "About"
 ## Skills and tools:
 
 ![](@assets/images/tech-skills.png)
+
+> - This site is powered by [Vercel](https://vercel.com/), built with [AstroPaper](https://github.com/satnaing/astro-paper#readme).
+> - All contents in this blog are published under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
