@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - Blog
-description: How to add KaTeX to AstroPaper
+description: How you can add KaTeX to AstroPaper theme
 ---
 
 [AstroPaper](https://github.com/satnaing/astro-paper/) 主题并不支持 KaTeX，因此我们需要手动添加 KaTeX 支持。

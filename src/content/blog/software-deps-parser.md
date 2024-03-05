@@ -9,8 +9,7 @@ tags:
   - Linux
   - OSS
   - Supple Chain
-description:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+description: How you can parse the dependencies of Ubuntu software packages to build the software supply chain
 ---
 
 ## Table of contents
@@ -170,27 +169,27 @@ requirements.txt 是 Python 项目中最常用的依赖声明文件，它会精�
 
 本文借助 PyCD，对于目标项目完成依赖项的解析。以软件包 abinit_9.6.2-1build1 为例，解析结果如下表所示。通过表中的 filepath 一栏，可以看出该项目的应用层依赖分别定义于三个不同的文件中，充分展现了单文件解析依赖关系的不可行性。
 
-| dep | version | filepath | type |
-| --- | --- | --- | --- |
-| pygments | ==* | ~/abisrc_requirements.txt | * |
-| pandas | ==* | ~/abisrc_requirements.txt | * |
-| graphviz | ==* | ~/abisrc_requirements.txt | * |
-| panel | ==* | ~/abisrc_requirements.txt | * |
-| mkdocs-material | ==7.0.6 | ~/requirements.txt | * |
-| pytest | ==* | ~/requirements.txt | * |
-| pyyaml | ==* | ~/requirements.txt | * |
-| pymdown-extensions | ==8.2 | ~/requirements.txt | * |
-| mkdocs | ==1.1.2 | ~/requirements.txt | * |
-| pygments | ==* | ~/requirements.txt | * |
-| python-markdown-math | ==* | ~/requirements.txt | * |
-| html2text | ==* | ~/requirements.txt | * |
-| pybtex | ==* | ~/requirements.txt | * |
-| numpy | ≥1.8 | ~/scripts/post_processing/
-ElectronPhononCoupling/setup.py | original |
-| mpi4py | ≥2.0 | ~/scripts/post_processing/
-ElectronPhononCoupling/setup.py | original |
-| netCDF4 | ≥1.2 | ~/scripts/post_processing/
-ElectronPhononCoupling/setup.py | original |
+| dep                             | version  | filepath                   | type |
+| ------------------------------- | -------- | -------------------------- | ---- |
+| pygments                        | ==\*     | ~/abisrc_requirements.txt  | \*   |
+| pandas                          | ==\*     | ~/abisrc_requirements.txt  | \*   |
+| graphviz                        | ==\*     | ~/abisrc_requirements.txt  | \*   |
+| panel                           | ==\*     | ~/abisrc_requirements.txt  | \*   |
+| mkdocs-material                 | ==7.0.6  | ~/requirements.txt         | \*   |
+| pytest                          | ==\*     | ~/requirements.txt         | \*   |
+| pyyaml                          | ==\*     | ~/requirements.txt         | \*   |
+| pymdown-extensions              | ==8.2    | ~/requirements.txt         | \*   |
+| mkdocs                          | ==1.1.2  | ~/requirements.txt         | \*   |
+| pygments                        | ==\*     | ~/requirements.txt         | \*   |
+| python-markdown-math            | ==\*     | ~/requirements.txt         | \*   |
+| html2text                       | ==\*     | ~/requirements.txt         | \*   |
+| pybtex                          | ==\*     | ~/requirements.txt         | \*   |
+| numpy                           | ≥1.8     | ~/scripts/post_processing/ |
+| ElectronPhononCoupling/setup.py | original |
+| mpi4py                          | ≥2.0     | ~/scripts/post_processing/ |
+| ElectronPhononCoupling/setup.py | original |
+| netCDF4                         | ≥1.2     | ~/scripts/post_processing/ |
+| ElectronPhononCoupling/setup.py | original |
 
 ### 构建应用层软件包依赖图
 

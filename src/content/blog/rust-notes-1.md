@@ -8,8 +8,7 @@ draft: false
 tags:
   - Rust
 description:
-  Some rules & recommendations for creating or adding new posts using AstroPaper
-  theme.
+  Learning Rust: Basic ideas, installation, and crates.io mirror
 ---
 
 ## Table of contents

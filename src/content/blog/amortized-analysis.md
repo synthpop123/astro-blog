@@ -7,7 +7,7 @@ featured: false
 ogImage: https://github.com/satnaing/astro-paper/assets/53733092/1ef0cf03-8137-4d67-ac81-84a032119e3a
 tags:
   - Algorithm
-description: "AstroPaper Version 3: Elevating Your Web Experience with Astro v3 and Seamless View Transitions"
+description: "Introduction to Amortized Analysis: a method for analyzing the average time of all operations in a sequence"
 ---
 
 摊还分析是一种分析一个操作序列中所执行的所有操作的平均时间分析方法。与一般的平均分析方法不同的是，**它不涉及概率的分析，可以保证最坏情况下每个操作的平均性能**。

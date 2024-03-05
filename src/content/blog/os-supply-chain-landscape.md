@@ -10,7 +10,7 @@ tags:
   - Security
   - Supply Chain
   - Visualization
-description: How you can make AstroPaper theme absolutely yours.
+description: Operating system software supply chain landscape and vulnerability tracking
 ---
 
 ## Table of contents
