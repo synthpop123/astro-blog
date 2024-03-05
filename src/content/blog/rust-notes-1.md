@@ -7,8 +7,7 @@ featured: true
 draft: false
 tags:
   - Rust
-description:
-  Learning Rust: Basic ideas, installation, and crates.io mirror
+description: "Learning Rust: Basic ideas, installation, and crates.io mirror"
 ---
 
 ## Table of contents
