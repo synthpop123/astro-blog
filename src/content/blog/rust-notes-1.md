@@ -32,7 +32,7 @@ cargo 1.75.0
 
 > 自 Cargo 1.68 版本起，支持**稀疏索引** (Sparse Index)：不再需要完整克隆 crates.io-index 仓库，从而可以加快获取包的速度。
 
-以字节跳动提供的的 Cargo 公益镜像源 [rsporxy](https://rsproxy.cn/) 为例，更改配置文件 `$HOME/.cargo/config.toml` 如下：
+以字节跳动提供的的 Cargo 公益镜像源 [rsproxy](https://rsproxy.cn/) 为例，更改配置文件 `$HOME/.cargo/config.toml` 如下：
 
 ```toml
 [source.crates-io]
