@@ -8,7 +8,7 @@ draft: false
 tags:
   - Linux
   - OSS
-  - Supple Chain
+  - Supply Chain
 description: How you can parse the dependencies of Ubuntu software packages to build the software supply chain
 ---
 
