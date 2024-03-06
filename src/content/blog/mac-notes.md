@@ -1,15 +1,18 @@
 ---
 author: lkw123
 pubDatetime: 2024-03-05T10:00:00Z
-title: MacOS 软件一键更新
-slug: mac-upgrade
-featured: false
+title: Mac 使用小记
+slug: mac-notes
+featured: true
 draft: false
 tags:
   - MacOS
-  - Homebrew
-description: How to keep your mac software updated easily
+description: All the stuffs I ran into when using MacOS
 ---
+
+## Table of contents
+
+## MacOS 软件一键更新
 
 ### 准备工作
 
