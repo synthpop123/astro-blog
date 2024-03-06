@@ -7,7 +7,7 @@ title: "Links"
 
 ## Friends
 
-- [lkhll](https://kylelv.com/)
+- [komqaq](https://kylelv.com/)
 - [cfandora](https://blog.cfandora.com/)
 
 ## Others
