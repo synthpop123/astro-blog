@@ -31,12 +31,12 @@ def replace_img_urls(directory, old_host, new_host):
             output_file.write(str(soup))
 
 if __name__ == '__main__':
-  if len(sys.argv) < 4:
-    print("Usage: python3 convert.py <directory> <old_host> <new_host>")
+  if len(sys.argv) < 2:
+    print("Usage: python3 convert.py <directory>")
     sys.exit(1)
 
   directory = sys.argv[1]
-  old_host = sys.argv[2]
-  new_host = sys.argv[3]
+  old_host = "https://blog.lkwplus.com"
+  new_host = "https://9cbd6ef.webp.ee"
 
   replace_img_urls(directory, old_host, new_host)
