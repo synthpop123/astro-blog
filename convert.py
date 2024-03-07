@@ -37,6 +37,6 @@ if __name__ == '__main__':
 
   directory = sys.argv[1]
   old_host = "https://blog.lkwplus.com"
-  new_host = "https://9cbd6ef.webp.ee"
+  new_host = "https://9cbd6ef.webp.ee/"
 
   replace_img_urls(directory, old_host, new_host)
