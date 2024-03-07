@@ -1,4 +1,0 @@
-{
-  "buildCommand": "npm run build; python3 convert.py ./dist",
-  "installCommand": "npm install; pip install -r requirements.txt"
-}
