@@ -3,7 +3,7 @@ author: lkw123
 pubDatetime: 2024-03-05T10:00:00Z
 title: Mac 使用小记
 slug: mac-notes
-featured: true
+featured: false
 draft: false
 tags:
   - MacOS
