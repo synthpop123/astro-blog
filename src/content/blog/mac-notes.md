@@ -79,7 +79,7 @@ export HISTFILESIZE=100000
 - [Warp](https://www.warp.dev/)：一个由 Rust 编写的跨平台终端，性能优秀，同时还有 AI 加持；
 - [VS Code](https://code.visualstudio.com/)：常用的轻量级代码编辑器，部分推荐插件如下：
   - [Live Server](https://github.com/ritwickdey/vscode-live-server/)
-  - Github Copilot Chat
+  - [Github Copilot Chat](https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide)
   - [Gitlens](https://www.gitkraken.com/gitlens)
   - [koroFileHeader](https://github.com/OBKoro1/koro1FileHeader)
 - [Zed Editor](https://zed.dev/)：采用 Rust 构建，性能强大速度快，支持 [Copilot](https://zed.dev/blog/copilot) 和实时协作等，目前作为主力编辑器使用；
