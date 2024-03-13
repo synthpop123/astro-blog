@@ -351,6 +351,100 @@ def query_datastore_info(ds, vc_ip):
 
 ### 输出到控制台
 
+为了在开发过程中便于调试，可以将获取到的信息视图输出到控制台。以数据存储信息为例：
+
+```python
+# 输出数据存储信息
+for i, ds in enumerate(ds_obj):
+    ds_info = query_datastore_info(ds, vc_ip)
+    if ds_info is not None:
+        print(
+            json.dumps(
+                ds_info,
+                indent=4,
+                ensure_ascii=False,
+                default=str,
+            )
+        )
+    if i == 5:
+        break
+```
+
 ### 输出到表格文件
+
+为了将多个信息视图展示在一个 Excel 文件中，在处理每个信息视图的过程中，可以对目标 Excel 工作表的名称进行指定，这样不同类的信息视图可以分别存储在不同的 tab 中。
+
+```python
+import openpyxl
+
+def write_dict_list_to_excel(dict_list, sheet_title):
+    """
+    将字典列表写入 Excel 文件
+
+    :param dict_list: 包含字典元素的列表
+    :param sheet_title: 工作表标题
+    :return: None
+    """
+    # 检查工作表是否已存在
+    if sheet_title in workbook.sheetnames:
+        # 获取已存在的工作表
+        sheet = workbook[sheet_title]
+    else:
+        # 创建新的工作表
+        sheet = workbook.create_sheet(title=sheet_title)
+
+        # 将字典列表的 key 作为表头写入第一行
+        headers = list(dict_list[0].keys())
+        sheet.append(headers)
+
+    # 将字典列表的 value 写入 Excel 文件
+    for data in dict_list:
+        sheet.append(list(data.values()))
+```
+
+在处理表格文件输出时，首先需要完成如下步骤：
+
+```python
+# 创建新的工作簿
+workbook = openpyxl.Workbook()
+sheet = workbook.active
+
+# 删除默认的 Sheet 工作表
+if "Sheet" in workbook.sheetnames:
+    workbook.remove(workbook["Sheet"])
+```
+
+分别处理每个信息视图：
+
+```python
+# 输出宿主机信息
+host_list = []
+for obj in host_obj:
+    host_list.append(query_host_info(obj))
+write_dict_list_to_excel(host_list, "宿主机信息")
+
+# 输出虚拟机信息
+vm_list = []
+for obj in vm_obj:
+    vm_list.append(query_vm_info(obj, vc_ip))
+write_dict_list_to_excel(vm_list, "虚拟机信息")
+
+# 输出集群信息
+cluster_list = []
+for obj in cluster_obj:
+    cluster_list.append(query_cluster_info(obj, vc_ip))
+write_dict_list_to_excel(cluster_list, "集群信息")
+
+# 输出数据存储信息
+# 创建 Cluster 和 datastore (LUN_name) 对应的字典
+init_cluster_lun(cluster_obj)
+ds_list = []
+for obj in ds_obj:
+    ds_list.append(query_datastore_info(obj, vc_ip))
+write_dict_list_to_excel(ds_list, "数据存储信息")
+
+# 将表格存储到磁盘
+workbook.save("vc_info.xlsx")
+```
 
 ### 输出到数据库
