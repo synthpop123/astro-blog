@@ -18,6 +18,7 @@
     "@astrojs/check": "^0.5.6",
     "@astrojs/rss": "^4.0.5",
     "@resvg/resvg-js": "^2.6.0",
+    "@vercel/speed-insights": "^1.0.10",
     "astro": "^4.4.11",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
