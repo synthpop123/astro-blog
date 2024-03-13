@@ -124,12 +124,6 @@
     white-space: pre;
   }
 
-  .underline-decoration-dashed {
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-underline-offset: 6px; /* 调整波浪线的偏移量 */
-  }
-
   #hero {
     display: flex;
     flex-direction: column;
@@ -145,5 +139,9 @@
   }
   .focus-outline {
     @apply outline-skin-fill outline-2 outline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
+  }
+
+  .all-posts-btn-wrapper {
+    @apply mb-8 mt-0 text-center !important;
   }
 }
