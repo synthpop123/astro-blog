@@ -15,5 +15,6 @@ export type SocialObjects = {
   name: keyof typeof socialIcons;
   href: string;
   active: boolean;
+  footeractive: boolean;
   linkTitle: string;
 }[];
