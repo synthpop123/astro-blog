@@ -31,8 +31,22 @@ export default defineConfig({
     ],
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
-      theme: "one-dark-pro",
+      // https://shiki.style/themes
+      theme: "material-theme",
+      // 另外，也提供了多种主题
+      // https://shiki.style/guide/dual-themes
+      // themes: {
+      //   light: 'github-light',
+      //   dark: 'min-dark',
+      // },
+      // 添加自定义语言
+      // https://shiki.style/languages
+      // langs: [],
+      // 启用自动换行，以防止水平滚动
       wrap: true,
+      // 添加自定义转换器：https://shiki.style/guide/transformers
+      // 查找常用转换器：https://shiki.style/packages/transformers
+      // transformers: [],
     },
   },
   vite: {
