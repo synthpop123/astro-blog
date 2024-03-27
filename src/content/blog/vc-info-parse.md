@@ -60,8 +60,9 @@ def get_obj(content, vimtype, name=None):
 
     if name is not None:
         objects = [view for view in container.view if name and view.name == name]
+    else:
+        objects = [view for view in container.view]
 
-    objects = [view for view in container.view]
     return objects
 ```
 
@@ -448,3 +449,30 @@ workbook.save("vc_info.xlsx")
 ```
 
 ### 输出到数据库
+
+采用 psycopg 连接到 PostgreSQL 数据库，将信息视图存储到数据库中。
+
+```python
+import psycopg
+
+# 数据库连接信息
+db_name = "db_name"
+db_user = "db_user"
+db_pass = "db_pass"
+db_host = "db_host"
+db_port = "db_port"
+
+# 数据库连接字符串
+conn_info = f"dbname={db_name} user={db_user} password={db_pass} host={db_host} port={db_port}"
+
+# 插入数据库表中
+with psycopg.connect(conn_info) as conn:
+    with conn.cursor() as cur:
+        cur.execute("""
+            INSERT INTO db.table_name
+            VALUES
+            (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (row["name"], row["ip"], row["vc_ip"], row["power_state"], \
+                row["cpu_num"], row["memory"], row["disk_size"], row["from_host"], \
+                row["from_host_name"], row["from_cluster"], row["from_lun"]))
+```
