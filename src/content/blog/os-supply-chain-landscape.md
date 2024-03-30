@@ -145,7 +145,7 @@ $$
 
 $$
 \begin{array}{cccccc}
-\textbf{OSV ID} & \textbf{ECOSYSTEM} & \textbf{PACKAGE} & \textbf{VERSION} & \textbf{SOURCE} \\
+\textbf{OSV ID} & \textbf{ECOSYSTEM} & \textbf{PKG} & \textbf{VERSION} & \textbf{SOURCE} \\
 \hline
 \texttt{GHSA-55x5-fj6c-h6m8} & \text{PyPI} & \text{lxml} & \text{4.6.2} & \text{\textasciitilde/requirements.txt} \\
 \texttt{GHSA-jq4v-f5q6-mjqq} & \text{PyPI} & \text{lxml} & \text{4.6.2} & \text{\textasciitilde/requirements.txt} \\
