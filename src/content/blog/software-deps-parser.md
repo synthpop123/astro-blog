@@ -199,4 +199,4 @@ requirements.txt 是 Python 项目中最常用的依赖声明文件，它会精�
 
 根据 package.json 文件的[规范](https://docs.npmjs.com/cli/v9/configuring-npm/package-json)，dependencies 字段中对于各个依赖项的声明的版本号部分存在多种表示形式，如本地文件路径、Git 仓库地址或是任一可下载的压缩包 URL 等。版本号的形式的多样性会为构建依赖关系带来不必要的麻烦，本文对其进行简化，在构建包含 NPM 软件包的依赖图中仅考虑依赖项的名称。
 
-在解析完毕依赖关系后，我们可以建立完整的操作系统软件供应链并进行可视化，以便进行进一步的分析，详见下篇[博文](https://blog.lkwplus.com/os-supply-chain-landscape)。
+在解析完毕依赖关系后，我们可以建立完整的操作系统软件供应链并进行可视化，以便进行进一步的分析，详见下篇[博文](https://blog.lkwplus.com/posts/os-supply-chain-landscape)。
