@@ -67,12 +67,42 @@ export HISTFILESIZE=100000
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- [eza](https://github.com/eza-community/eza)：用于替代 `ls`，`eza` 是已停止维护的 [exa](https://github.com/ogham/exa) 的一个分支，功能更为丰富，开源社区更活跃；
 - [neofetch](https://github.com/dylanaraps/neofetch)：以美观方式展示系统详细信息；
 - [Oh My Zsh](https://ohmyz.sh/)：一个开源的、社区驱动的框架，用于管理 zsh 配置，安装如下插件：
-  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [htop](https://github.com/htop-dev/htop) 等。
+  - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+  - [fzf-tab](https://github.com/Aloxaf/fzf-tab)
+- [Starship](https://starship.rs/)：基于 Rust 的跨平台的 Shell 提示符，具有轻量、迅速、客制化的特点，选用 [Tokyo Night](https://starship.rs/presets/tokyo-night) 主题；
+
+差生文具多：
+
+|                          Prefer                           |                                         Description                                          | Replace |
+| :-------------------------------------------------------: | :------------------------------------------------------------------------------------------: | :-----: |
+|        [eza](https://github.com/eza-community/eza)        |                           A modern, maintained replacement for ls.                           |   ls    |
+|      [zoxide](https://github.com/ajeetdsouza/zoxide)      |                       A smarter cd command, supports all major shells.                       |   cd    |
+|         [htop](https://github.com/htop-dev/htop)          |                                An interactive process viewer.                                |   top   |
+|     [ripgrep](https://github.com/BurntSushi/ripgrep)      | ripgrep recursively searches directories for a regex pattern while respecting your gitignore |  grep   |
+|            [ncdu](https://dev.yorhel.nl/ncdu)             |        Ncdu (NCurses Disk Usage) is a disk usage analyzer with an ncurses interface.         |   du    |
+|           [bat](https://github.com/sharkdp/bat)           |                                  A cat(1) clone with wings.                                  |   cat   |
+|            [fd](https://github.com/sharkdp/fd)            |                    A simple, fast and user-friendly alternative to 'find'                    |  find   |
+|         [procs](https://github.com/dalance/procs)         |                         A modern replacement for ps written in Rust.                         |   ps    |
+|          [fzf](https://github.com/junegunn/fzf)           |                  A general-purpose command-line fuzzy finder written in Go.                  |  find   |
+|       [fzf-tab](https://github.com/Aloxaf/fzf-tab)        |                  Replace zsh's default completion selection menu with fzf.                   |  find   |
+|       [tokei](https://github.com/XAMPPRocky/tokei)        |                     A program that displays statistics about your code.                      |  cloc   |
+|                  [tldr](https://tldr.sh)                  |                       Collaborative cheatsheets for console commands.                        |   man   |
+|        [thefuck](https://github.com/nvbn/thefuck)         |                Magnificent app which corrects your previous console command.                 |    -    |
+|    [lazygit](https://github.com/jesseduffield/lazygit)    |                            A simple terminal UI for git commands.                            |   git   |
+| [lazydocker](https://github.com/jesseduffield/lazydocker) |                   A simple terminal UI for both docker and docker-compose.                   | docker  |
+
+部分 alias 定义于 `~/.zshrc` 如下：
+
+```bash
+alias ls="eza"
+alias ll="eza --time-style=long-iso --icons --group --git --binary -lg"
+alias tree="eza --tree --icons"
+alias cls="clear"
+```
+
+![](@assets/images/shell-screenshot.png)
 
 ### 开发工具
 
@@ -84,7 +114,32 @@ export HISTFILESIZE=100000
   - [koroFileHeader](https://github.com/OBKoro1/koro1FileHeader)
 - [Zed Editor](https://zed.dev/)：采用 Rust 构建，性能强大速度快，支持 [Copilot](https://zed.dev/blog/copilot) 和实时协作等，目前作为主力编辑器使用；
 
-## MacOS 软件一键更新
+### GUI 工具
+
+统一采用 Homebrew Cask 进行管理。
+
+```text
+$ brew list
+==> Formulae
+...
+==> Casks
+1password                       iina                    plex
+alacritty                       jellyfin                sabnzbd
+applite                         loop                    transmit
+daisydisk                       lulu                    tuxera-ntfs
+downie                          netnewswire             typora
+font-jetbrains-mono-nerd-font   notion                  zed
+font-lxgw-wenkai                orbstack
+handbrake                       pictureview
+```
+
+### 编程语言版本管理
+
+- Python: [uv](https://github.com/astral-sh/uv) -> An extremely fast Python package installer and resolver, written in Rust
+- Node: [fnm](https://github.com/Schniz/fnm) -> Fast and simple Node.js version manager, built in Rust
+- Java: [jenv](https://github.com/linux-china/jenv) -> Java enVironment Manager
+- Go: [gvm](https://github.com/moovweb/gvm) -> Go Version Manager
+- Rust: [rustup](https://rustup.rs/) -> The Rust toolchain installer
 
 ### 准备工作
 
