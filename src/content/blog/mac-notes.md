@@ -141,6 +141,8 @@ handbrake                       pictureview
 - Go: [gvm](https://github.com/moovweb/gvm) -> Go Version Manager
 - Rust: [rustup](https://rustup.rs/) -> The Rust toolchain installer
 
+## MacOS 软件一键更新
+
 ### 准备工作
 
 - 安装 [brew-cask-upgrade](https://github.com/buo/homebrew-cask-upgrade):
