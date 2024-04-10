@@ -67,7 +67,6 @@ export HISTFILESIZE=100000
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- [neofetch](https://github.com/dylanaraps/neofetch)：以美观方式展示系统详细信息；
 - [Oh My Zsh](https://ohmyz.sh/)：一个开源的、社区驱动的框架，用于管理 zsh 配置，安装如下插件：
   - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
   - [fzf-tab](https://github.com/Aloxaf/fzf-tab)
@@ -75,23 +74,24 @@ export HISTFILESIZE=100000
 
 差生文具多：
 
-|                          Prefer                           |                                         Description                                          | Replace |
-| :-------------------------------------------------------: | :------------------------------------------------------------------------------------------: | :-----: |
-|        [eza](https://github.com/eza-community/eza)        |                           A modern, maintained replacement for ls.                           |   ls    |
-|      [zoxide](https://github.com/ajeetdsouza/zoxide)      |                       A smarter cd command, supports all major shells.                       |   cd    |
-|         [htop](https://github.com/htop-dev/htop)          |                                An interactive process viewer.                                |   top   |
-|     [ripgrep](https://github.com/BurntSushi/ripgrep)      | ripgrep recursively searches directories for a regex pattern while respecting your gitignore |  grep   |
-|            [ncdu](https://dev.yorhel.nl/ncdu)             |        Ncdu (NCurses Disk Usage) is a disk usage analyzer with an ncurses interface.         |   du    |
-|           [bat](https://github.com/sharkdp/bat)           |                                  A cat(1) clone with wings.                                  |   cat   |
-|            [fd](https://github.com/sharkdp/fd)            |                    A simple, fast and user-friendly alternative to 'find'                    |  find   |
-|         [procs](https://github.com/dalance/procs)         |                         A modern replacement for ps written in Rust.                         |   ps    |
-|          [fzf](https://github.com/junegunn/fzf)           |                  A general-purpose command-line fuzzy finder written in Go.                  |  find   |
-|       [fzf-tab](https://github.com/Aloxaf/fzf-tab)        |                  Replace zsh's default completion selection menu with fzf.                   |  find   |
-|       [tokei](https://github.com/XAMPPRocky/tokei)        |                     A program that displays statistics about your code.                      |  cloc   |
-|                  [tldr](https://tldr.sh)                  |                       Collaborative cheatsheets for console commands.                        |   man   |
-|        [thefuck](https://github.com/nvbn/thefuck)         |                Magnificent app which corrects your previous console command.                 |    -    |
-|    [lazygit](https://github.com/jesseduffield/lazygit)    |                            A simple terminal UI for git commands.                            |   git   |
-| [lazydocker](https://github.com/jesseduffield/lazydocker) |                   A simple terminal UI for both docker and docker-compose.                   | docker  |
+|                          Prefer                           |                                         Description                                          | Replace  |
+| :-------------------------------------------------------: | :------------------------------------------------------------------------------------------: | :------: |
+|        [eza](https://github.com/eza-community/eza)        |                           A modern, maintained replacement for ls.                           |    ls    |
+|      [zoxide](https://github.com/ajeetdsouza/zoxide)      |                       A smarter cd command, supports all major shells.                       |    cd    |
+|         [htop](https://github.com/htop-dev/htop)          |                                An interactive process viewer.                                |   top    |
+|     [ripgrep](https://github.com/BurntSushi/ripgrep)      | ripgrep recursively searches directories for a regex pattern while respecting your gitignore |   grep   |
+|            [ncdu](https://dev.yorhel.nl/ncdu)             |        Ncdu (NCurses Disk Usage) is a disk usage analyzer with an ncurses interface.         |    du    |
+|           [bat](https://github.com/sharkdp/bat)           |                                  A cat(1) clone with wings.                                  |   cat    |
+|            [fd](https://github.com/sharkdp/fd)            |                    A simple, fast and user-friendly alternative to 'find'                    |   find   |
+|         [procs](https://github.com/dalance/procs)         |                         A modern replacement for ps written in Rust.                         |    ps    |
+|          [fzf](https://github.com/junegunn/fzf)           |                  A general-purpose command-line fuzzy finder written in Go.                  |   find   |
+|       [fzf-tab](https://github.com/Aloxaf/fzf-tab)        |                  Replace zsh's default completion selection menu with fzf.                   |   find   |
+|       [tokei](https://github.com/XAMPPRocky/tokei)        |                     A program that displays statistics about your code.                      |   cloc   |
+|                  [tldr](https://tldr.sh)                  |                       Collaborative cheatsheets for console commands.                        |   man    |
+|        [thefuck](https://github.com/nvbn/thefuck)         |                Magnificent app which corrects your previous console command.                 |    -     |
+|    [lazygit](https://github.com/jesseduffield/lazygit)    |                            A simple terminal UI for git commands.                            |   git    |
+| [lazydocker](https://github.com/jesseduffield/lazydocker) |                   A simple terminal UI for both docker and docker-compose.                   |  docker  |
+|  [fastfetch](https://github.com/fastfetch-cli/fastfetch)  |                 Like neofetch, but much faster because written mostly in C.                  | neofetch |
 
 部分 alias 定义于 `~/.zshrc` 如下：
 
