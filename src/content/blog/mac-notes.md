@@ -92,6 +92,7 @@ export HISTFILESIZE=100000
 |    [lazygit](https://github.com/jesseduffield/lazygit)    |                            A simple terminal UI for git commands.                            |   git    |
 | [lazydocker](https://github.com/jesseduffield/lazydocker) |                   A simple terminal UI for both docker and docker-compose.                   |  docker  |
 |  [fastfetch](https://github.com/fastfetch-cli/fastfetch)  |                 Like neofetch, but much faster because written mostly in C.                  | neofetch |
+|       [delta](https://github.com/dandavison/delta)        |                 A syntax-highlighting pager for git, diff, and grep output.                  |   diff   |
 
 部分 alias 定义于 `~/.zshrc` 如下：
 
