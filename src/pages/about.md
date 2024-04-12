@@ -9,9 +9,9 @@ title: "About"
 
 ## Me, myself & I
 
-INTP (introverted, intuitive, thinking and perceiving)
-
 **Male | Movie | Music | Minimalist**
+
+INTP (introverted, intuitive, thinking and perceiving)
 
 > Be **Creative** & Keep **Learning**
 
@@ -25,7 +25,12 @@ INTP (introverted, intuitive, thinking and perceiving)
 
 ## Skills and tools
 
-![](@assets/images/tech-skills.png)
+- **Programming Languages**: C/C++, Python, Rust, Golang
+- **Web Development**: HTML, CSS, JavaScript, Bootstrap, Tailwind CSS
+- **Frameworks**: Flask, Django, Express
+- **Databases**: MongoDB, MySQL, PostgreSQL
+- **DevOps**: Docker, Kubernetes, Git, Ansible
+- **Utilities**: Linux, MacOS, Vim, Markdown
 
 ## About this site
 
