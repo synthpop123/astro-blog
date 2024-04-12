@@ -152,4 +152,21 @@
   .all-posts-btn-wrapper {
     @apply mb-8 mt-0 text-center !important;
   }
+
+  .footer-wrapper span {
+    font-size: 0.85em;
+  }
+
+  .footer-wrapper {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  html[data-theme="dark"] #zeabur-light {
+    display: none;
+  }
+
+  html[data-theme="light"] #zeabur-dark {
+    display: none;
+  }
 }

@@ -7,7 +7,11 @@ title: "About"
   <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
 </div>
 
-### _Male | Movie | Music | Minimalist_
+## Me, myself & I
+
+**_Male | Movie | Music | Minimalist_**
+
+INTP (introverted, intuitive, thinking and perceiving)
 
 > Be **Creative** & Keep **Learning**
 
@@ -23,5 +27,7 @@ title: "About"
 
 ![](@assets/images/tech-skills.png)
 
-> - This site is powered by [Vercel](https://vercel.com/), built with [AstroPaper](https://github.com/satnaing/astro-paper#readme).
-> - All contents in this blog are published under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+## About this site
+
+- This site is powered by [Zeabur](https://zeabur.com?referralCode=synthpop123), originated from [AstroPaper](https://github.com/satnaing/astro-paper#readme). Thanks! ♥
+- All contents in this blog are published under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).

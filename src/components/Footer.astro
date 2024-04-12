@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@config";
 import Hr from "./Hr.astro";
 import Socials from "./Socials-footer.astro";
 
@@ -18,7 +19,26 @@ const { noMarginTop = false } = Astro.props;
     <div class="copyright-wrapper">
       <span>&#169; 2021 - {currentYear}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+      {
+        SITE.lightAndDarkMode && (
+          <>
+            <a href="https://zeabur.com?referralCode=synthpop123&utm_source=synthpop123&utm_campaign=oss">
+              <img
+                src="https://zeabur.com/deployed-on-zeabur-light.svg"
+                alt="Deployed on Zeabur"
+                id="zeabur-light"
+              />
+            </a>
+            <a href="https://zeabur.com?referralCode=synthpop123&utm_source=synthpop123&utm_campaign=oss">
+              <img
+                src="https://zeabur.com/deployed-on-zeabur-dark.svg"
+                alt="Deployed on Zeabur"
+                id="zeabur-dark"
+              />
+            </a>
+          </>
+        )
+      }
     </div>
   </div>
 </footer>
