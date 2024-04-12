@@ -9,9 +9,9 @@ title: "About"
 
 ## Me, myself & I
 
-**_Male | Movie | Music | Minimalist_**
-
 INTP (introverted, intuitive, thinking and perceiving)
+
+**Male | Movie | Music | Minimalist**
 
 > Be **Creative** & Keep **Learning**
 
