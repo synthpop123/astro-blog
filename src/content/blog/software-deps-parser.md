@@ -9,7 +9,7 @@ tags:
   - Linux
   - OSS
   - Supply Chain
-description: How you can parse the dependencies of Ubuntu software packages to build the software supply chain
+description: Parse Ubuntu software packages' dependencies to build a supply chain
 ---
 
 ## Table of contents

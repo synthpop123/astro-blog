@@ -23,14 +23,14 @@ INTP (introverted, intuitive, thinking and perceiving)
 - Twitter: [@whoamamamiii](https://twitter.com/whoamamamiii)
 - Telegram: [@lkwtg](https://twitter.com/whoamamamiii)
 
-## Skills and tools
+## Tech Skills
 
-- **Programming Languages**: C/C++, Python, Rust, Golang
-- **Web Development**: HTML, CSS, JavaScript, Bootstrap, Tailwind CSS
-- **Frameworks**: Flask, Django, Express
-- **Databases**: MongoDB, MySQL, PostgreSQL
-- **DevOps**: Docker, Kubernetes, Git, Ansible
-- **Utilities**: Linux, MacOS, Vim, Markdown
+- **Programming Language**: C/C++, Python, Rust, Golang, JavaScript, Shell Script
+- **Web Development**: HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, React, Vue, Angular, Next.js, Astro
+- **Server-side Development & Frameworks**: Flask, Django, Express
+- **Database Management**: MySQL, PostgreSQL, MongoDB, Redis
+- **DevOps & Version Control**: Docker, Kubernetes, Git/SVN, Ansible, Zabbix
+- **Miscellaneous**: Linux, MacOS, GraphQL, REST, Vim, Markdown
 
 ## About this site
 
