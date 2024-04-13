@@ -25,11 +25,11 @@ INTP (introverted, intuitive, thinking and perceiving)
 
 ## Tech Skills
 
-- **Programming Language**: C/C++, Python, Rust, Golang, JavaScript, Shell Script
+- **Programming Language**: C/C++, Python, Rust, Golang, Shell Script
 - **Web Development**: HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, React, Vue, Angular, Next.js, Astro
-- **Server-side Development & Frameworks**: Flask, Django, Express
+- **Server-side Development**: Flask, Django, Express
 - **Database Management**: MySQL, PostgreSQL, MongoDB, Redis
-- **DevOps & Version Control**: Docker, Kubernetes, Git/SVN, Ansible, Zabbix
+- **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible, Zabbix
 - **Miscellaneous**: Linux, MacOS, GraphQL, REST, Vim, Markdown
 
 ## About this site
