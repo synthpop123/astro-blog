@@ -120,6 +120,7 @@
 
   pre > code {
     white-space: pre;
+    font-family: "IBM Plex Mono" !important; 
   }
 
   #hero {
@@ -128,16 +129,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
-
-  /* 修改展开按钮的文本 */
-  .remark-collapsible:before {
-    content: "展开目录";
-  }
-
-  /* 修改收起按钮的文本 */
-  .remark-collapsible[aria-expanded="true"]:before {
-    content: "收起目录";
   }
 }
 
