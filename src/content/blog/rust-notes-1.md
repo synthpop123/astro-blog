@@ -14,16 +14,21 @@ description: "Learning Rust: Basic ideas, installation, and crates.io mirror"
 
 ## Rust 安装
 
-对于 MacOS 用户，可以通过 [Homebrew](https://brew.sh/) 一键安装 Rust 环境：
+对于 MacOS 用户，不推荐使用 `brew install rust` 的指令配置 Rust 环境，因为无法通过 rustup 工具来进行版本管理。因此我们选择直接安装 rustup 工具，它会自动安装并配置最新版本的 Rust 编译器和 Cargo 包管理器。
+
+```bash
+$ brew install rustup-init
+$ rustup-init
+```
 
 测试是否安装成功：
 
 ```bash
 $ rustc --version
-rustc 1.75.0 (82e1608df 2023-12-21) (Homebrew)
+rustc 1.78.0 (9b00956e5 2024-04-29)
 
 $ cargo --version
-cargo 1.75.0
+cargo 1.78.0 (54d8815d0 2024-03-26)
 ```
 
 ## [crates.io](https://crates.io/) 换源
