@@ -50,13 +50,6 @@ defaults write com.apple.dock springboard-columns Default
 killall Dock
 ```
 
-解除 `history` 输出条数过少的限制
-
-```bash
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-```
-
 ## 常用软件安装
 
 ### 命令行工具
@@ -66,11 +59,6 @@ export HISTFILESIZE=100000
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-- [Oh My Zsh](https://ohmyz.sh/)：一个开源的、社区驱动的框架，用于管理 zsh 配置，安装如下插件：
-  - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
-  - [fzf-tab](https://github.com/Aloxaf/fzf-tab)
-- [Starship](https://starship.rs/)：基于 Rust 的跨平台的 Shell 提示符，具有轻量、迅速、客制化的特点，选用 [Tokyo Night](https://starship.rs/presets/tokyo-night) 主题；
 
 差生文具多：
 
@@ -94,16 +82,131 @@ export HISTFILESIZE=100000
 |  [fastfetch](https://github.com/fastfetch-cli/fastfetch)  |                 Like neofetch, but much faster because written mostly in C.                  | neofetch |
 |       [delta](https://github.com/dandavison/delta)        |                 A syntax-highlighting pager for git, diff, and grep output.                  |   diff   |
 
-部分 alias 定义于 `~/.zshrc` 如下：
+### Zsh 配置
+
+常用的 [Oh My Zsh](https://ohmyz.sh/) 对于我来说略显臃肿，因此我选择使用 [zinit](https://github.com/zdharma-continuum/zinit) 来管理插件。
+
+至此，`~/.zshrc` 可以分为几个模块，分别定义不同的功能配置：
+
+#### zinit 相关
+
+在安装 zinit 的过程中，它会自动的接管 `~/.zshrc`，并向其中添加其相关配置如下：
 
 ```bash
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+```
+
+#### 加载环境变量
+
+```bash
+# Load Environment Variables
+export PATH="/Users/lkw123/Library/Python/3.9/bin:$HOME/.cargo/bin:$PATH"
+export BAT_THEME="Monokai Extended Origin"
+export STARSHIP_CONFIG="/Users/lkw123/.config/starship/starship.toml"
+```
+
+#### 三个基础插件
+
+- [zdharma/fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting): 语法高亮，与 `zsh-syntax-highlighting` 功能几乎一致，个人使用习惯更偏向于 f-sy-h。
+- [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions): 自动补全，根据历史命令自动补全。
+- [zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions): 补全插件，提供了常用命令的补全。
+
+```bash
+# Add in zsh plugins
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# Load completions
+autoload -Uz compinit && compinit
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+```
+
+#### 引入 fzf-tab
+
+值得注意的一点是，根据 [fzf-tab](https://github.com/Aloxaf/fzf-tab) 的 README 中的 [compatibility-with-other-plugins](https://github.com/Aloxaf/fzf-tab#compatibility-with-other-plugins) 所言，需要将 fzf-tab 的引入放在配置文件的最后部分，以避免和 zsh-completions 插件产生冲突。
+
+```bash
+# fzf-tab init and styling
+zinit light Aloxaf/fzf-tab
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza --icons -1 --color=always $realpath'
+```
+
+通过以上的配置，可以实现在 cd 目录时，配合 fzf 的功能快速预览目标目录的文件结构：
+
+![](@assets/images/fzf-tab-screenshot.jpg)
+
+#### 定义别名
+
+```bash
+# Aliases
 alias ls="eza"
-alias ll="eza --time-style=long-iso --icons --group --git --binary -lg"
+alias ll="eza --time-style=default --icons --git -l"
+alias la="eza --time-style=long-iso --icons --group --git --binary -la"
 alias tree="eza --tree --icons"
 alias cls="clear"
+alias cat="bat"
+alias v="nvim"
 ```
 
 ![](@assets/images/shell-screenshot.png)
+
+#### 历史记录
+
+```bash
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+```
+
+#### Shell 集成
+
+- [starship](https://starship.rs/)：基于 Rust 的跨平台的 Shell 提示符，具有轻量、迅速、客制化的特点，选用 [Tokyo Night](https://starship.rs/presets/tokyo-night) Preset；
+- [thefuck](https://github.com/nvbn/thefuck)：用于快速更改输错的命令，实际使用中比较鸡肋，使用场景没有预想的多；
+- [zoxide](https://github.com/ajeetdsouza/zoxide)：用于快速跳转常用的工作目录。
+
+```bash
+# Shell integrations
+eval "$(starship init zsh)"
+eval "$(thefuck --alias)"
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+```
 
 ### 开发工具
 
