@@ -32,7 +32,7 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // https://shiki.style/themes
-      theme: "material-theme",
+      theme: "catppuccin-mocha",
       // 另外，也提供了多种主题
       // https://shiki.style/guide/dual-themes
       // themes: {
