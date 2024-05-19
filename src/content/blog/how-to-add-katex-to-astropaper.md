@@ -26,7 +26,7 @@ npm install remark-math
 npm install rehype-katex
 ```
 
-## 修改博客 JavaScript 配置文件
+## 修改博客 astro.config.mjs
 
 在 `astro.config.mjs` 中新增 `remark-math` 和 `rehype-katex` 的引入：
 
@@ -69,7 +69,7 @@ export default defineConfig({
 
 然而，根据 [issue #150](https://github.com/satnaing/astro-paper/issues/150) 中的讨论，AstroPaper 主题的暗色模式下 KaTeX 渲染效果不佳，会出现如下图所示的情形：
 
-![AstroPaper 主题暗色模式下 KaTeX 渲染效果](@assets/images/astropaper-katex-dark-mode.png)
+![AstroPaper 主题暗色模式下 KaTeX 渲染效果](@assets/images/astropaper-katex-dark-mode.jpg)
 
 因此，我们需要手动在 `src/layouts/PostDetails.astro` 中新增覆写相关 CSS 的处理：
 

@@ -195,7 +195,7 @@ requirements.txt 是 Python 项目中最常用的依赖声明文件，它会精�
 
 在实现应用层包管理器的依赖声明文件解析器后，本文完成 Ubuntu 22.04 应用层软件包的依赖项的提取。进一步的，本文对所有操作系统软件包中引入了这些包管理器软件包的部分构建依赖关系图，以直观呈现应用层软件包间的供应链。其中，Maven、NPM、Pip 软件包应用层依赖图如下图所示：
 
-![](@assets/images/app-dependencies.png)
+![](@assets/images/app-dependencies.jpg)
 
 根据 package.json 文件的[规范](https://docs.npmjs.com/cli/v9/configuring-npm/package-json)，dependencies 字段中对于各个依赖项的声明的版本号部分存在多种表示形式，如本地文件路径、Git 仓库地址或是任一可下载的压缩包 URL 等。版本号的形式的多样性会为构建依赖关系带来不必要的麻烦，本文对其进行简化，在构建包含 NPM 软件包的依赖图中仅考虑依赖项的名称。
 

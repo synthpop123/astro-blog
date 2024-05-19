@@ -176,7 +176,7 @@ alias cat="bat"
 alias v="nvim"
 ```
 
-![](@assets/images/shell-screenshot.png)
+![](@assets/images/shell-screenshot.jpg)
 
 #### 历史记录
 
@@ -323,6 +323,6 @@ brew update && brew upgrade && brew cu --all --yes --cleanup \
 
 执行结果样例如下：
 
-![](@assets/images/mac-upgrade.png)
+![](@assets/images/mac-upgrade.jpg)
 
 可以作为定时任务，周期性执行，以保持 Mac 上软件为最新版本。
