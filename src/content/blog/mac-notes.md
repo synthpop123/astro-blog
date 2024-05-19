@@ -245,6 +245,42 @@ handbrake                       pictureview
 - Go: [gvm](https://github.com/moovweb/gvm) -> Go Version Manager
 - Rust: [rustup](https://rustup.rs/) -> The Rust toolchain installer
 
+### Tmux 配置
+
+感谢 B 站 UP 主帕特里柯基在视频 [和我一起配置 tmux](https://www.bilibili.com/video/BV12y421h7rH/) 中分享的配置过程。我的 Tmux 配置基本是照搬过来：
+
+```bash
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# catppuccin theme
+set -g @plugin "catppuccin/tmux"
+set -g @catppuccin_flavour "mocha"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+# non-plugin options
+set -g default-terminal "tmux-256color"
+set -g base-index 1
+set -g pane-base-index 1
+set -g renumber-windows on
+set -g mouse on
+
+# visual mode
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+# keymaps
+unbind C-b
+set -g prefix C-Space
+```
+
 ## MacOS 软件一键更新
 
 ### 准备工作
