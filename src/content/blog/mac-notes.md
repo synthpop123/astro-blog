@@ -52,6 +52,8 @@ killall Dock
 
 ## 常用软件安装
 
+![fastfetch](@assets/images/fastfetch-screenshot.webp)
+
 ### 命令行工具
 
 统一采用 Homebrew 对系统软件包进行管理，安装命令行工具时，优先考虑 Homebrew 提供的软件包。
