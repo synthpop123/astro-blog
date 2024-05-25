@@ -34,11 +34,11 @@ INTP (introverted, intuitive, thinking and perceiving)
 
 ## Last.fm Stats
 
-![My Last.fm scrobbles](https://lastfm-recently-played.vercel.app/api?user=synthpop123&show_user=header&footer_style=normal_stats)
+![My Last.fm scrobbles](https://lastfm.lkwplus.com/api?user=synthpop123&show_user=header&footer_style=normal_stats)
 
 ## WakaTime Coding Stats
 
-<figure><embed src="https://wakatime.com/share/@lkw123/751bcea3-b8eb-4aa5-a92f-b374056f28f1.svg"></embed></figure>
+<figure><embed src="https://wakatime.com/share/@lkw123/2dff4bff-7f01-497f-b22a-6e8515f10545.svg"></embed></figure>
 
 ## About this site
 
