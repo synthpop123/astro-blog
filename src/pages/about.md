@@ -25,12 +25,20 @@ INTP (introverted, intuitive, thinking and perceiving)
 
 ## Tech Skills
 
-- **Programming Language**: C/C++, Python, Rust, Golang, Shell Script
-- **Web Development**: HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, React, Vue, Angular, Next.js, Astro
-- **Server-side Development**: Flask, Django, Express
-- **Database Management**: MySQL, PostgreSQL, MongoDB, Redis
+- **Languages**: C/C++, Python, JavaScipt, Rust, Golang, Shell Script
+- **Frontend Dev**: HTML, CSS, Bootstrap, Tailwind CSS, React, Vue, Angular, Next.js, Astro
+- **Backend Dev**: Flask, Django, FastAPI, Express
+- **Databases**: MySQL, PostgreSQL, MongoDB, Redis
 - **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible, Zabbix
-- **Miscellaneous**: Linux, MacOS, GraphQL, REST, Vim, Markdown
+- **Miscs**: Linux, MacOS, GraphQL, REST, Vim, Markdown
+
+## Last.fm Stats
+
+![My Last.fm scrobbles](https://lastfm-recently-played.vercel.app/api?user=synthpop123&show_user=header&footer_style=normal_stats)
+
+## WakaTime Coding Stats
+
+<figure><embed src="https://wakatime.com/share/@lkw123/751bcea3-b8eb-4aa5-a92f-b374056f28f1.svg"></embed></figure>
 
 ## About this site
 
