@@ -32,14 +32,6 @@ INTP (introverted, intuitive, thinking and perceiving)
 - **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible, Zabbix
 - **Miscs**: Linux, MacOS, GraphQL, REST, Vim, Markdown
 
-## Last.fm Stats
-
-![My Last.fm scrobbles](https://lastfm.lkwplus.com/api?user=synthpop123&show_user=header&footer_style=normal_stats)
-
-## WakaTime Coding Stats
-
-<figure><embed src="https://wakatime.com/share/@lkw123/2dff4bff-7f01-497f-b22a-6e8515f10545.svg"></embed></figure>
-
 ## About this site
 
 - This site is powered by [Zeabur](https://zeabur.com?referralCode=synthpop123), originated from [AstroPaper](https://github.com/satnaing/astro-paper#readme). Thanks! ♥
