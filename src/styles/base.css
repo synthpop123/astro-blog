@@ -30,7 +30,7 @@
   }
   body {
     @apply bg-skin-fill text-skin-base selection:bg-skin-accent selection:text-skin-inverted flex min-h-[100svh]
-    flex-col font-mono selection:bg-opacity-70;
+    flex-col font-fix selection:bg-opacity-70;
   }
   section,
   footer {

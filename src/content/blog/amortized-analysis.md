@@ -4,7 +4,6 @@ pubDatetime: 2021-05-07T10:00:00.000Z
 title: 摊还分析 Amortized Analysis
 slug: amortized-analysis
 featured: false
-ogImage: https://github.com/satnaing/astro-paper/assets/53733092/1ef0cf03-8137-4d67-ac81-84a032119e3a
 tags:
   - Algorithm
 description: "Introduction to Amortized Analysis: a method for analyzing the average time of all operations in a sequence"
