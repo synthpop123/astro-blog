@@ -28,7 +28,7 @@ export const SOCIALS: SocialObjects = [
   {
     name: "Github",
     href: "https://github.com/synthpop123",
-    linkTitle: ` ${SITE.author} on Github`,
+    linkTitle: `${SITE.author} on Github`,
     active: true,
     footeractive: true,
   },
