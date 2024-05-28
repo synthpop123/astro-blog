@@ -340,13 +340,84 @@ index 43a4a71..54264c7 100644
 
 自 2021 年起，我开始采用 [Last.fm](https://www.last.fm/) 记录自己所听的音乐。为了能将其展示在博客中，我借助开源项目 [lastfm-recently-played-readme](https://github.com/JeffreyCA/lastfm-recently-played-readme)，生成最近听歌记录的图片，可以便携地嵌入到博客 Markdown 文件中。
 
-由于该项目部署于 Vercel，其默认网址 `lastfm-recently-played.vercel.app` 在中国大陆无法访问，因此我选择自己在 Vercel 上进行部署，并绑定到我的域名 `lkwplus.com` 上，以避免被墙。
+由于该项目部署于 Vercel，其默认网址 `lastfm-recently-played.vercel.app` 在中国大陆无法访问，因此我选择自己重新部署，并绑定到我的域名 `lastfm.lkwplus.com` 上，以避免被墙。
+
+需要注意的是，官方的部署教程见 [GitHub](https://github.com/JeffreyCA/lastfm-recently-played-readme#deploying-own-vercel-project)，需要设置两个环境变量，分别是 Last.fm 账户的 `API_KEY` 及由 Vercel 自动进行分配的 `VERCEL_URL`。
+
+但是我在部署过程中遇到了无法显示专辑和头像图片的问题，我的解决方式是将项目内的 `VERCEL_URL` 替换为任意其他名称，如 `BASE_URL`，从而可以手动将其设置为项目的自定义域名，以规避 Vercel 的自动分配。
+
+```diff
+# pages/api/index.ts
+
+- const BaseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
++ const BaseUrl = process.env.BASE_URL ? `https://${process.env.BASE_URL}` : 'http://localhost:3000';
+```
 
 ### Letterboxd 最近观影记录展示
 
-由于国内的最好用的记录观影记录的平台豆瓣存在各种限制，也并不提供标准可访问的 API，我选择采用相对小众一点的 [Letterboxd](https://letterboxd.com/) 平台来记录自己所看的电影。同样，我借助开源项目 [letterboxd-embed-landing-page](https://github.com/timciep/letterboxd-embed-landing-page)，将最近的观影记录（包含影评）嵌入到博客中，具体效果可以在博客的 [Miscs](https://blog.lkwplus.com/miscs) 页面查看。
+由于国内的最好用的记录观影记录的平台豆瓣存在各种限制，也并不提供标准可访问的 API，我选择采用相对小众一点的 [Letterboxd](https://letterboxd.com/) 平台来记录自己所看的电影。
 
-使用方法是
+同样，我借助开源项目 [letterboxd-embed-landing-page](https://github.com/timciep/letterboxd-embed-landing-page)，将最近的观影记录（包含影评）嵌入到博客中，具体效果可以在博客的 [Miscs](https://blog.lkwplus.com/miscs) 页面查看。
+
+使用方法如下：
+
+1. 在项目提供的前端 [Letterboxd Embed Landing Page](https://letterboxd-embed-landing-page.vercel.app/) 中输入自己的 Letterboxd 用户名，点击 `Generate` 按钮，生成嵌入代码，如下图所示：
+
+   ![](@assets/images/letterboxd-embed.webp)
+
+2. 将网站中生成的 snippet 添加到需要放置的页面的 `Layout.astro` 中，以 Miscs 为例，其中有两点需要注意：
+
+   - 将 `letterboxd-embed-wrapper-tc` 放在 id 为 `miscs` 的 `section` 中，以继承原有的样式；
+
+   - 为了适配网站的深色模式，添加了一些自定义的 CSS 样式，注入到插入的 document 的 style 部分。
+
+   ```diff
+   diff --git a/src/layouts/MiscsLayout.astro b/src/layouts/MiscsLayout.astro
+   index c2fb104..dc7d48f 100644
+   --- a/src/layouts/MiscsLayout.astro
+   +++ b/src/layouts/MiscsLayout.astro
+   @@ -21,8 +21,38 @@ const { frontmatter } = Astro.props;
+      <main id="main-content">
+        <section id="miscs" class="prose prose-img:border-0 mb-28 max-w-3xl">
+          <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
+   -      <slot />
+   +      <slot /><br />
+   +      <div id="letterboxd-embed-wrapper-tc">Loading...</div>
+        </section>
+      </main>
+   -  <Footer />
+    </Layout>
+   +<script>
+   +  fetch("https://lb-embed-content.bokonon.dev?username=lkw123")
+   +    .then(response => response.text())
+   +    .then(data => {
+   +      const element = document.getElementById("letterboxd-embed-wrapper-tc");
+   +      if (element) {
+   +        element.innerHTML = data;
+   +      }
+   +
+   +      const style = document.createElement("style");
+   +      style.innerHTML = `
+   +            html[data-theme="dark"] .letterboxd-embed-tc-title {
+   +                color: lightgray !important;
+   +            }
+   +            html[data-theme="dark"] .letterboxd-embed-tc-date {
+   +                color: gray !important;
+   +            }
+   +            html[data-theme="dark"] .letterboxd-embed-tc-review {
+   +                color: lightgray !important;
+   +            }
+   +            .letterboxd-embed-tc-review {
+   +                font-size: 0.9rem !important;
+   +            }
+   +        `;
+   +      if (element) {
+   +        element.appendChild(style);
+   +      }
+   +    });
+   +</script>
+   +<Footer />
+   ```
 
 ### WakaTime Coding 统计展示
 
@@ -356,9 +427,13 @@ index 43a4a71..54264c7 100644
 <figure><embed src="https://wakatime.com/share/@lkw123/XXX.svg"></embed></figure>
 ```
 
-### 在 Footer 添加 Zeabur
+### 在 Footer 添加 Zeabur 图标
 
-自从我将博客和一些其他网站从 Vercel 迁移至 Zeabur 以来，我一直希望可以在网站的 Footer 中添加一个 Zeabur 的 Logo，以便让更多的人了解到这个优秀的服务。在 AstroPaper 主题中，Footer 的内容是通过 `src/layouts/Layout.astro` 中的 `Footer` 组件定义的，因此我可以在这里添加展示 `Zeabur` 的 Logo：
+自从我将博客和一些其他网站从 Vercel 迁移至 Zeabur 以来，我一直希望可以在网站的 Footer 中添加一个 Zeabur 的 Logo，以便让让更多的人了解到这个优秀的服务。
+
+在 AstroPaper 主题中，Footer 的内容是通过 `src/layouts/Layout.astro` 中的 `Footer` 组件定义的，因此我可以在这里添加展示 `Zeabur` 的 Logo。
+
+为了使得这个 Logo 同时适配网站的浅色模式和深色模式，我采用了一个非常 Naive 的方式：同时引入 id 为 `zeabur-light` 的浅色 Logo 和 id 为 `zeabur-dark` 的深色 Logo，然后通过 CSS 控制其显示与隐藏，虽然不太优雅，但是至少可以正常工作了。
 
 ```diff
 diff --git a/src/components/Footer.astro b/src/components/Footer.astro
@@ -398,7 +473,7 @@ index 31f452e..dd8fe14 100644
  </footer>
 ```
 
-为了使得这个 Logo 同时适配网站的浅色模式和深色模式，我采用了一个非常 Naive 的方式：同时引入 id 为 `zeabur-light` 的浅色 Logo 和 id 为 `zeabur-dark` 的深色 Logo，然后通过 CSS 控制其显示与隐藏，虽然不太优雅，但是至少可以正常工作了。相关 CSS 定义如下：
+相关 CSS 定义如下：
 
 ```diff
 diff --git a/src/styles/base.css b/src/styles/base.css
@@ -420,4 +495,5 @@ index 6efa219..7b4de7a 100644
 ## TODO
 
 - [ ] 添加评论系统
-- [ ] ...
+- [ ] 优化博客在中国大陆的访问体验
+- [ ] ......
