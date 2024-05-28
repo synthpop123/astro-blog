@@ -1,13 +1,14 @@
 ---
 author: lkw123
 pubDatetime: 2024-05-25T00:00:00.000Z
-title: 博客自定义
+title: AstroPaper 博客自定义
 slug: blog-customization
 featured: false
 tags:
   - Blog
   - CSS
-description: How I customize my blog
+  - Astro
+description: How I customize my blog using AstroPaper theme
 ---
 
 ## Table of contents
@@ -39,7 +40,7 @@ index 6efa219..7b4de7a 100644
 
 ### 修改代码高亮
 
-Astro-Paper 通过 [Shiki](https://shiki.matsu.io/) 实现代码高亮，支持多种主题，可以在 `astro.config.ts` 中进行配置。我选择采用 `catppuccino-mocha` 主题替换默认的 `one-dark-pro` 主题。
+AstroPaper 通过 [Shiki](https://shiki.style/) 实现代码高亮，支持多种主题，可以在 `astro.config.ts` 中进行配置。我选择采用 `catppuccino-mocha` 主题替换默认的 `one-dark-pro` 主题。
 
 ```diff
 diff --git a/astro.config.ts b/astro.config.ts
@@ -73,7 +74,7 @@ index 52d3437..cc33c96 100644
 
 ### 修改字体
 
-由于 Astro-Paper 主题默认采用的 IBM Plex Mono 字体对于中文支持不佳，我选择将主字体替换为开源中文字体 [霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。
+由于 AstroPaper 主题默认采用的 IBM Plex Mono 字体对于中文支持不佳，我选择将主字体替换为开源中文字体 [霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。
 
 需要在 `tailwind.config.cjs` 中对 `fontFamily` 的扩展进行修改，将 `IBM Plex Mono` 替换为 `LXGW WenKai Screen`：
 
@@ -91,7 +92,7 @@ index 8e43860..06dacbc 100644
        typography: {
 ```
 
-相对应的，需要在 `base.css` 中将 `font-mono` 替换为 `font-fix`：
+相对应的，需要在 `src/styles/base.css` 中将 `font-mono` 替换为 `font-fix`：
 
 ```diff
 diff --git a/src/styles/base.css b/src/styles/base.css
@@ -110,7 +111,7 @@ index 6efa219..7b4de7a 100644
    section,
 ```
 
-接下来需要引入霞鹜文楷字体的 Stylesheet，为了避免阻塞渲染，可以将 `media` 设置为 `print`，在加载完成后再将 `media` 设置为 `all`。同时，采用饿了么提供的 CDN 提高加载速度，相关代码添加到 `Layout.astro` 中：
+接下来需要引入霞鹜文楷字体的 Stylesheet，为了避免阻塞渲染，可以将 `media` 设置为 `print`，在加载完成后再将 `media` 设置为 `all`。同时，采用饿了么提供的 CDN 提高加载速度，相关代码添加到 `src/layouts/Layout.astro` 中：
 
 ```diff
 diff --git a/src/layouts/Layout.astro b/src/layouts/Layout.astro
@@ -137,7 +138,7 @@ index 826c3d2..931baa1 100644
 - 标签展示时，若采用霞鹜文楷字体，会导致显示紊乱；
 - 代码框中也会采用霞鹜文楷字体，不符合等宽字体的要求。
 
-对于第一个问题，需要在 `Tag.astro` 中将字体强制设定为 `IBM Plex Mono`：
+对于第一个问题，需要在 `src/components/Tag.astro` 中将字体强制设定为 `IBM Plex Mono`：
 
 ```diff
 diff --git a/src/components/Tag.astro b/src/components/Tag.astro
@@ -154,7 +155,7 @@ index 5a4a376..72f65e0 100644
      @apply -mr-5 h-6 w-6 scale-95 text-skin-base opacity-80 group-hover:fill-skin-accent;
 ```
 
-对于第二个问题，在 `base.css` 中，将 `pre > code` 的字体强制设定为 `IBM Plex Mono` 即可：
+对于第二个问题，在 `src/styles/base.css` 中，将 `pre > code` 的字体强制设定为 `IBM Plex Mono` 即可：
 
 ```diff
 diff --git a/src/styles/base.css b/src/styles/base.css
@@ -219,7 +220,7 @@ index 0000000..e90cdcc
 +</style>
 ```
 
-在 `SOCIALS` 常量中，添加 `footeractive` 字段，用于控制是否在 Footer 中展示：
+对于 `src/config.ts` 中定义的 `SOCIALS` 常量，添加布尔值 `footeractive` 字段，用于控制是否在 Footer 中展示：
 
 ```diff
 diff --git a/src/config.ts b/src/config.ts
@@ -331,6 +332,10 @@ index 43a4a71..54264c7 100644
 
 ## 自定义添加新功能
 
+### 添加 KaTeX 支持
+
+详见此前的博客文章 [为 AstroPaper 主题添加 KaTeX 支持](https://blog.lkwplus.com/posts/how-to-add-katex-to-astropaper/)。
+
 ### Last.fm 最近听歌记录展示
 
 自 2021 年起，我开始采用 [Last.fm](https://www.last.fm/) 记录自己所听的音乐。为了能将其展示在博客中，我借助开源项目 [lastfm-recently-played-readme](https://github.com/JeffreyCA/lastfm-recently-played-readme)，生成最近听歌记录的图片，可以便携地嵌入到博客 Markdown 文件中。
@@ -347,13 +352,13 @@ index 43a4a71..54264c7 100644
 
 为了展示自己的编程活动统计，我采用了 [WakaTime](https://wakatime.com/) 平台，为常用的 IDE/编辑器（如 VS Code、PyCharm、NeoVim、Vim 等）安装了对应插件，通过其提供的 [可嵌入图标](https://wakatime.com/share/embed) 的功能，展示在博客中：
 
-```markdown
+```html
 <figure><embed src="https://wakatime.com/share/@lkw123/XXX.svg"></embed></figure>
 ```
 
 ### 在 Footer 添加 Zeabur
 
-自从我将博客和一些其他网站从 Vercel 迁移至 Zeabur 以来，我一直希望可以在网站的 Footer 中添加一个 Zeabur 的 Logo，以便让更多的人了解到这个优秀的服务。在 Astro-Paper 主题中，Footer 的内容是通过 `src/layouts/Layout.astro` 中的 `Footer` 组件定义的，因此我可以在这里添加展示 `Zeabur` 的 Logo：
+自从我将博客和一些其他网站从 Vercel 迁移至 Zeabur 以来，我一直希望可以在网站的 Footer 中添加一个 Zeabur 的 Logo，以便让更多的人了解到这个优秀的服务。在 AstroPaper 主题中，Footer 的内容是通过 `src/layouts/Layout.astro` 中的 `Footer` 组件定义的，因此我可以在这里添加展示 `Zeabur` 的 Logo：
 
 ```diff
 diff --git a/src/components/Footer.astro b/src/components/Footer.astro
@@ -390,9 +395,7 @@ index 31f452e..dd8fe14 100644
 +      }
      </div>
    </div>
- </footer>@@ -1,6 +1,7 @@
- import { Astro } from "@astro";
- import { currentYear } from "../utils";
+ </footer>
 ```
 
 为了使得这个 Logo 同时适配网站的浅色模式和深色模式，我采用了一个非常 Naive 的方式：同时引入 id 为 `zeabur-light` 的浅色 Logo 和 id 为 `zeabur-dark` 的深色 Logo，然后通过 CSS 控制其显示与隐藏，虽然不太优雅，但是至少可以正常工作了。相关 CSS 定义如下：
