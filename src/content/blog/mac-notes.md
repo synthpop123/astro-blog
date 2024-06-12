@@ -200,7 +200,8 @@ setopt hist_find_no_dups
 
 - [starship](https://starship.rs/)：基于 Rust 的跨平台的 Shell 提示符，具有轻量、迅速、客制化的特点，选用 [Tokyo Night](https://starship.rs/presets/tokyo-night) Preset；
 - [thefuck](https://github.com/nvbn/thefuck)：用于快速更改输错的命令，实际使用中比较鸡肋，使用场景没有预想的多；
-- [zoxide](https://github.com/ajeetdsouza/zoxide)：用于快速跳转常用的工作目录。
+- [zoxide](https://github.com/ajeetdsouza/zoxide)：用于快速跳转常用的工作目录；
+- [fnm](https://github.com/Schniz/fnm)：Node.js 版本管理工具。
 
 ```bash
 # Shell integrations
@@ -208,7 +209,17 @@ eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+eval "$(fnm env --use-on-cd)"
 ```
+
+最后，简单测试一下 Zsh 的启动时间：
+
+```bash
+$ time zsh -i -c exit
+zsh -i -c exit  0.10s user 0.06s system 59% cpu 0.273 total
+```
+
+确实挺不错的 :)
 
 ### 开发工具
 
@@ -239,7 +250,7 @@ font-lxgw-wenkai                orbstack
 handbrake                       pictureview
 ```
 
-### 编程语言版本管理
+### 开发环境
 
 - Python: [uv](https://github.com/astral-sh/uv) -> An extremely fast Python package installer and resolver, written in Rust
 - Node: [fnm](https://github.com/Schniz/fnm) -> Fast and simple Node.js version manager, built in Rust
