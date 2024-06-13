@@ -138,14 +138,14 @@
 
   @media (max-width: 768px) {
     .logo img {
-        max-height: 45px; /* 适当调整这个值 */
-        height: auto;
-        width: auto;
+      max-height: 45px; /* 适当调整这个值 */
+      height: auto;
+      width: auto;
     }
 
     .top-nav-wrap {
-        align-items: center; /* 调整对齐方式，确保图片不会溢出 */
-        padding-bottom: 1.2rem !important; /* 调整padding以适应图片高度 */
+      align-items: center; /* 调整对齐方式，确保图片不会溢出 */
+      padding-bottom: 1.2rem !important; /* 调整padding以适应图片高度 */
     }
   }
 }
