@@ -48,6 +48,9 @@
     stroke-current stroke-2 opacity-90 group-hover:fill-transparent
     sm:scale-110;
   }
+  .title-wrapper h1 {
+    font-family: "IBM Plex Mono" !important;
+  }
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base
     prose-p:!text-skin-base
