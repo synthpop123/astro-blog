@@ -162,7 +162,8 @@
     @apply mb-8 mt-0 text-center !important;
   }
 
-  .footer-wrapper span, a {
+  .footer-wrapper span,
+  .footer-wrapper a {
     font-size: 0.85em;
   }
 
