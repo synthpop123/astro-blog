@@ -49,7 +49,7 @@
     sm:scale-110;
   }
   .title-wrapper h1 {
-    font-family: "IBM Plex Mono" !important;
+    @apply font-mono;
   }
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base
