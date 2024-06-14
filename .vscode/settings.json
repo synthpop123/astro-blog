@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/dependabot-2.0.json": "file:///d%3A/Projects/astro-blog/.github/dependabot.yml"
+    }
+}
