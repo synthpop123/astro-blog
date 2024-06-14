@@ -24,6 +24,11 @@ export const LOGO_IMAGE = {
   height: 20,
 };
 
+export const MEMOS_RSS_FEED = {
+  // enable: true,
+  url: "https://memos.lkwplus.com/u/lkw123/rss.xml",
+};
+
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
