@@ -34,5 +34,5 @@ INTP (introverted, intuitive, thinking and perceiving)
 
 ## About this site
 
-- This site is powered by [Zeabur](https://zeabur.com?referralCode=synthpop123), originated from [AstroPaper](https://github.com/satnaing/astro-paper#readme). Thanks! ♥
+- This site is powered by [Cloudflare Pages](https://pages.cloudflare.com/), source code can be found at [synthpop123/astro-blog](https://github.com/synthpop123/astro-blog). Credits to [AstroPaper](https://github.com/satnaing/astro-paper#readme). Thanks! ♥
 - All contents in this blog are published under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
