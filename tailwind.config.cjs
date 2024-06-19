@@ -54,7 +54,7 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        mono: ["IBM Plex Mono", "monospace"],
+        mono: ["var(--font-ibm)"],
         fix: ["LXGW WenKai Screen"],
       },
 
