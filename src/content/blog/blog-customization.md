@@ -2,8 +2,8 @@
 author: lkw123
 pubDatetime: 2024-05-25T00:00:00.000Z
 title: AstroPaper 博客自定义
-slug: blog-customization
-featured: false
+slug: astropaper-blog-customization
+featured: true
 tags:
   - Blog
   - CSS
