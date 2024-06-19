@@ -1,8 +1,8 @@
 ---
 author: lkw123
 pubDatetime: 2024-03-05T10:00:00Z
-title: Mac 使用小记
-slug: mac-notes
+title: 我的 Mac 开发环境配置
+slug: mac-dev-notes
 featured: true
 draft: false
 tags:
