@@ -25,6 +25,7 @@ export default defineConfig({
       [
         remarkCollapse,
         {
+          summary: "展开目录",
           test: "Table of Contents",
         },
       ],
@@ -32,7 +33,7 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // https://shiki.style/themes
-      theme: "catppuccin-mocha",
+      theme: "andromeeda",
       // 另外，也提供了多种主题
       // https://shiki.style/guide/dual-themes
       // themes: {
