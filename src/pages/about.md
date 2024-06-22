@@ -26,7 +26,7 @@ INTP (introverted, intuitive, thinking and perceiving)
 ## Tech Skills
 
 - **Languages**: C/C++, Python, JavaScipt, Rust, Golang, Shell Script
-- **Frontend Dev**: HTML, CSS, Bootstrap, Tailwind CSS, React, Vue, Angular, Next.js, Astro
+- **Frontend Dev**: HTML, CSS, Bootstrap, Tailwind CSS, React, Vue, Next.js, Astro
 - **Backend Dev**: Flask, Django, FastAPI, Express
 - **Databases**: MySQL, PostgreSQL, MongoDB, Redis
 - **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible, Zabbix
