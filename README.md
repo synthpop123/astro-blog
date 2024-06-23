@@ -22,19 +22,14 @@ The website is built based on the amazing [AstroPaper](https://astro-paper.pages
 The easiest way to run this project locally is to run the following command in your desired directory.
 
 ```bash
-git clone repo-url && cd repo-name
-```
-
-Then, install the dependencies.
-
-```bash
+# Install dependencies
 pnpm install
-```
 
-Now you are ready to run the dev server, you can access it at `localhost:4321`.
+# Start the development server
+pnpm dev
 
-```bash
-pnpm run dev
+# Build the project
+pnpm build
 ```
 
 ## 🧞 Commands
