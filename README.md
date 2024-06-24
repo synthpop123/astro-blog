@@ -1,5 +1,7 @@
 # lkw123's AstroBlog
 
+[![Dependabot Updates](https://github.com/synthpop123/astro-blog/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/synthpop123/astro-blog/actions/workflows/dependabot/dependabot-updates) [![CodeQL](https://github.com/synthpop123/astro-blog/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/synthpop123/astro-blog/actions/workflows/github-code-scanning/codeql)
+
 ## 📜 Credits
 
 The website is built based on the amazing [AstroPaper](https://astro-paper.pages.dev/) theme.
