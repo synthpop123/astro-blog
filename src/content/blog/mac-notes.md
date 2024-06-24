@@ -72,7 +72,7 @@ killall Dock
 |     [ripgrep](https://github.com/BurntSushi/ripgrep)      | ripgrep recursively searches directories for a regex pattern while respecting your gitignore. |   grep   |
 |            [ncdu](https://dev.yorhel.nl/ncdu)             |         Ncdu (NCurses Disk Usage) is a disk usage analyzer with an ncurses interface.         |    du    |
 |           [bat](https://github.com/sharkdp/bat)           |                                  A cat(1) clone with wings.                                   |   cat    |
-|            [fd](https://github.com/sharkdp/fd)            |                    A simple, fast and user-friendly alternative to 'find'                     |   find   |
+|            [fd](https://github.com/sharkdp/fd)            |                    A simple, fast and user-friendly alternative to 'find'.                    |   find   |
 |         [procs](https://github.com/dalance/procs)         |                         A modern replacement for ps written in Rust.                          |    ps    |
 |          [fzf](https://github.com/junegunn/fzf)           |                  A general-purpose command-line fuzzy finder written in Go.                   |   find   |
 |       [fzf-tab](https://github.com/Aloxaf/fzf-tab)        |                   Replace zsh's default completion selection menu with fzf.                   |   find   |
