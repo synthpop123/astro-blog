@@ -165,11 +165,6 @@
     @apply mb-8 mt-0 text-center !important;
   }
 
-  .footer-wrapper span,
-  .footer-wrapper a {
-    font-size: 0.85em;
-  }
-
   .footer-wrapper {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
