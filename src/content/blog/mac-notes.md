@@ -214,10 +214,40 @@ eval "$(fnm env --use-on-cd)"
 
 最后，简单测试一下 Zsh 的启动时间：
 
-```bash
-$ time zsh -i -c exit
-zsh -i -c exit  0.10s user 0.06s system 59% cpu 0.273 total
-```
+1. 采用直观的比较 Naive 的方式直接观测 zsh 的启动速度：
+
+   ```bash
+   ❯ for i in $(seq 10); do
+     /usr/bin/time zsh -lic exit
+   done
+
+       0.16 real         0.10 user         0.04 sys
+       0.13 real         0.09 user         0.03 sys
+       0.13 real         0.09 user         0.03 sys
+       0.13 real         0.09 user         0.03 sys
+       0.13 real         0.09 user         0.03 sys
+       0.14 real         0.10 user         0.03 sys
+       0.14 real         0.09 user         0.03 sys
+       0.13 real         0.09 user         0.03 sys
+       0.13 real         0.09 user         0.03 sys
+       0.13 real         0.09 user         0.03 sys
+   ```
+
+2. 借助 [zsh-bench](https://github.com/romkatv/zsh-bench) 更完善的对 zsh 的启动时间进行基准测试：
+   ```bash
+   ❯ ./zsh-bench
+   ==> benchmarking login shell of user lkw123 ...
+   creates_tty=0
+   has_compsys=1
+   has_syntax_highlighting=1
+   has_autosuggestions=1
+   has_git_prompt=1
+   first_prompt_lag_ms=199.405
+   first_command_lag_ms=202.526
+   command_lag_ms=59.470
+   input_lag_ms=4.480
+   exit_time_ms=136.965
+   ```
 
 确实挺不错的 :)
 
