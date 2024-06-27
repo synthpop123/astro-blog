@@ -11,7 +11,7 @@ title: "About"
 
 **Male | Movie | Music | Minimalist**
 
-INTP (introverted, intuitive, thinking and perceiving)
+INTP (**I** **N**eed **T**o slee**P**)
 
 > Be **Creative** & Keep **Learning**
 
