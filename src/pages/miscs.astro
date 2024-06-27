@@ -35,7 +35,7 @@ const friends = [
       <h2>Friends</h2>
       <section
         id="friends"
-        class="prose prose-img:border-0 mb-28 max-w-3xl friend-cards-container"
+        class="prose prose-img:border-0 max-w-3xl friend-cards-container"
       >
         {
           friends.map(friend => (
@@ -64,15 +64,15 @@ const friends = [
           src="https://wakatime.com/share/@lkw123/2dff4bff-7f01-497f-b22a-6e8515f10545.svg"
         />
       </figure>
+      <h2>Last.fm Scrobbles</h2>
+      <Image
+        src="https://lastfm.lkwplus.com/api?user=synthpop123&show_user=header&footer_style=normal_stats"
+        alt="last.fm scrobbles"
+        inferSize={true}
+      />
+      <h2>Letterboxd Recently Watched</h2>
+      <div id="letterboxd-embed-wrapper-tc">Loading...</div>
     </section>
-    <h2>Last.fm Scrobbles</h2>
-    <Image
-      src="https://lastfm.lkwplus.com/api?user=synthpop123&show_user=header&footer_style=normal_stats"
-      alt="last.fm scrobbles"
-      inferSize={true}
-    />
-    <h2>Letterboxd Recently Watched</h2>
-    <div id="letterboxd-embed-wrapper-tc">Loading...</div>
   </main>
 </Layout>
 
@@ -110,7 +110,6 @@ const friends = [
     display: flex;
     flex-wrap: wrap;
     gap: 10%;
-    margin-bottom: 0%;
     justify-content: center;
   }
 </style>
