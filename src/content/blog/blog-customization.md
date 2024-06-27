@@ -501,5 +501,5 @@ index 6efa219..7b4de7a 100644
 - [x] 将博客从 npm 迁移到 pnpm
 - [ ] 通过 Memos 的 RSS 功能，在博客中添加一个页面展示 Memos 瀑布流
 - [x] 引入 Umami 或者其他统计工具
-- [ ] 为友链添加 card 样式
+- [x] 为友链添加 card 样式
 - [ ] ......

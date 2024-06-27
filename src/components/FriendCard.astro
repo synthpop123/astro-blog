@@ -1,0 +1,65 @@
+---
+export interface Props {
+  name: string;
+  image: string;
+  url: string;
+  bio: string;
+}
+
+const { name, image, url, bio } = Astro.props;
+---
+
+<div class="friend-card">
+  <div class="friend-card__image-wrapper">
+    <img src={image} alt={`${name}'s icon`} class="friend-card__image" />
+  </div>
+  <div class="friend-card__info">
+    <h3 class="friend-card__name"><a href={url} target="_blank">{name}</a></h3>
+    <p class="friend-card__bio">{bio}</p>
+  </div>
+</div>
+
+<style>
+  .friend-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 40%;
+  }
+
+  .friend-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .friend-card__image-wrapper {
+    flex: 3;
+    padding-left: 2%;
+  }
+
+  .friend-card__image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .friend-card__info {
+    flex: 4;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .friend-card__name {
+    font-size: 1.25rem !important;
+  }
+
+  .friend-card__bio {
+    font-size: 0.9rem !important;
+  }
+</style>

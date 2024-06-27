@@ -1,0 +1,117 @@
+---
+import { SITE } from "@config";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import FriendCard from "@components/FriendCard.astro";
+import Layout from "../layouts/Layout.astro";
+import localMiscImage from "../assets/images/miscs.webp";
+import { Image } from "astro:assets";
+
+const friends = [
+  {
+    name: "lkhll",
+    image:
+      "https://blog.kylelv.com/wp-content/uploads/2020/03/225746FEEECD80CD9542FB24A34F0841.jpg",
+    url: "https://kylelv.com/",
+    bio: "komqaq",
+  },
+  {
+    name: "cfandora",
+    image: "https://pic.cfandora.com/avatar/dora.avif",
+    url: "https://blog.cfandora.com/",
+    bio: "Try to Find",
+  },
+];
+---
+
+<Layout title={`Miscs | ${SITE.title}`}>
+  <Header activeNav="miscs" />
+  <Breadcrumbs />
+  <main id="main-content">
+    <section id="miscs" class="prose prose-img:border-0 mb-28 max-w-3xl">
+      <h1 class="text-2xl tracking-wider sm:text-3xl">Miscs</h1>
+      <Image src={localMiscImage} alt="Misc image" />
+      <h2>Friends</h2>
+      <section
+        id="friends"
+        class="prose prose-img:border-0 mb-28 max-w-3xl friend-cards-container"
+      >
+        {
+          friends.map(friend => (
+            <FriendCard
+              name={friend.name}
+              image={friend.image}
+              url={friend.url}
+              bio={friend.bio}
+            />
+          ))
+        }
+      </section>
+      <h2>Mottos</h2>
+      <p>
+        You’re not getting younger, the world is changing, the music is
+        changing, and the drugs are changing. You can’t be here all the time,
+        dreaming of drugs and pop, and the key is that you have to find
+        something new.
+      </p>
+      <p>
+        我不明了我的全部天职，根本想不到应该怎么样和将要成为什么。在我的生命的每一时刻我确实知道的是，我应该做什么∶我应该发展我的智慧，学得知识，以便扩展我的职责的范围。我处于极为明智和至善的世界之中，这个世界毫无误差地贯彻执行它的计划，我安于这种信念而享有幸福。
+      </p>
+      <h2>WakaTime Coding Stats</h2>
+      <figure>
+        <embed
+          src="https://wakatime.com/share/@lkw123/2dff4bff-7f01-497f-b22a-6e8515f10545.svg"
+        />
+      </figure>
+    </section>
+    <h2>Last.fm Scrobbles</h2>
+    <Image
+      src="https://lastfm.lkwplus.com/api?user=synthpop123&show_user=header&footer_style=normal_stats"
+      alt="last.fm scrobbles"
+      inferSize={true}
+    />
+    <h2>Letterboxd Recently Watched</h2>
+    <div id="letterboxd-embed-wrapper-tc">Loading...</div>
+  </main>
+</Layout>
+
+<script>
+  fetch("https://lb-embed-content.bokonon.dev?username=lkw123")
+    .then(response => response.text())
+    .then(data => {
+      const element = document.getElementById("letterboxd-embed-wrapper-tc");
+      if (element) {
+        element.innerHTML = data;
+      }
+
+      const style = document.createElement("style");
+      style.innerHTML = `
+            html[data-theme="dark"] .letterboxd-embed-tc-title {
+                color: lightgray !important;
+            }
+            html[data-theme="dark"] .letterboxd-embed-tc-date {
+                color: lightgray !important;
+            }
+            html[data-theme="dark"] .letterboxd-embed-tc-review {
+                color: lightgray !important;
+            }
+            .letterboxd-embed-tc-review {
+                font-size: 0.9rem !important;
+            }
+        `;
+      if (element) {
+        element.appendChild(style);
+      }
+    });
+</script>
+<style>
+  .friend-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    margin-bottom: 0%;
+    justify-content: center;
+  }
+</style>
+<Footer />
