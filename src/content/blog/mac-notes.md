@@ -1,13 +1,13 @@
 ---
 author: lkw123
 pubDatetime: 2024-03-05T10:00:00Z
-title: 我的 Mac 开发环境配置
-slug: mac-dev-notes
+title: 我的 MacOS 开发环境配置
+slug: macos-dev-setup
 featured: true
 draft: false
 tags:
   - MacOS
-description: All the stuffs I ran into when using MacOS
+description: Some of my personal MacOS dev environment configurations
 ---
 
 ## Table of contents
@@ -369,3 +369,7 @@ brew update && brew upgrade && brew cu --all --yes --cleanup \
 ![](@assets/images/mac-upgrade.jpg)
 
 可以作为定时任务，周期性执行，以保持 Mac 上软件为最新版本。
+
+---
+
+我的部分 dotfiles 托管于 GitHub 仓库 [synthpop123/dotfiles](https://github.com/synthpop123/dotfiles)，仅用于备份用途。
