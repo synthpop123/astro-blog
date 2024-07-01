@@ -8,7 +8,7 @@ tags:
   - Blog
   - CSS
   - Astro
-description: How I customize my blog using AstroPaper theme
+description: How I customize my blog based on AstroPaper theme
 ---
 
 ## Table of contents
