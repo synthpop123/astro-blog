@@ -126,6 +126,7 @@ zinit light-mode for \
 export PATH="/Users/lkw123/Library/Python/3.9/bin:$HOME/.cargo/bin:$PATH"
 export BAT_THEME="Monokai Extended Origin"
 export STARSHIP_CONFIG="/Users/lkw123/.config/starship/starship.toml"
+export GPG_TTY=$(tty)
 ```
 
 #### 三个基础插件
