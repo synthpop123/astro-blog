@@ -1,6 +1,6 @@
 ---
 author: lkw123
-pubDatetime: 2024-02-23T20:00:00.000Z
+pubDatetime: 2024-02-23T20:00:00+08:00
 title: 为 AstroPaper 主题添加 KaTeX 支持
 slug: how-to-add-katex-to-astropaper
 featured: false

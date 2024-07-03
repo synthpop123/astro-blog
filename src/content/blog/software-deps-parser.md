@@ -1,7 +1,7 @@
 ---
 title: 解析 Ubuntu 操作系统软件包依赖关系
 author: lkw123
-pubDatetime: 2023-06-15T15:00:00Z
+pubDatetime: 2023-06-15T15:00:00+08:00
 slug: software-deps-parser
 featured: true
 draft: false

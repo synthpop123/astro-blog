@@ -1,6 +1,6 @@
 ---
 author: lkw123
-pubDatetime: 2024-05-25T00:00:00.000Z
+pubDatetime: 2024-05-25T00:00:00+08:00
 title: AstroPaper 博客自定义
 slug: astropaper-blog-customization
 featured: true

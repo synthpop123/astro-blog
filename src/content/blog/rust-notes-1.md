@@ -1,6 +1,6 @@
 ---
 author: lkw123
-pubDatetime: 2024-02-20T10:00:00Z
+pubDatetime: 2024-02-20T10:00:00+08:00
 title: Rust 学习笔记（一）
 slug: rust-notes-1
 featured: false

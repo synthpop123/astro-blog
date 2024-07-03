@@ -1,6 +1,6 @@
 ---
 author: lkw123
-pubDatetime: 2021-05-07T10:00:00.000Z
+pubDatetime: 2021-05-07T10:00:00+08:00
 title: 摊还分析 Amortized Analysis
 slug: amortized-analysis
 featured: false

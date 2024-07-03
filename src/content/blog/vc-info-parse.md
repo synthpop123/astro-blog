@@ -1,6 +1,6 @@
 ---
 author: lkw123
-pubDatetime: 2024-01-10T10:00:00Z
+pubDatetime: 2024-01-10T10:00:00+08:00
 title: 使用 PyVmomi 获取 VMWare 虚拟化集群信息
 slug: vc-info-parse
 featured: true

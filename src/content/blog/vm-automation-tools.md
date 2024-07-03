@@ -1,6 +1,6 @@
 ---
 author: lkw123
-pubDatetime: 2024-03-27T10:00:00Z
+pubDatetime: 2024-03-27T10:00:00+08:00
 title: 使用 PyVmomi 构建 VMWare 自动化工具
 slug: vm-automation-tools
 featured: false
