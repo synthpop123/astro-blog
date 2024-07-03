@@ -5,7 +5,7 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import FriendCard from "@components/FriendCard.astro";
 import Layout from "../layouts/Layout.astro";
-import localMiscImage from "../assets/images/miscs.webp";
+import localMiscImage from "../assets/images/misc.webp";
 import { Image } from "astro:assets";
 
 const friends = [
@@ -24,12 +24,12 @@ const friends = [
 ];
 ---
 
-<Layout title={`Miscs | ${SITE.title}`}>
-  <Header activeNav="miscs" />
+<Layout title={`Misc | ${SITE.title}`}>
+  <Header activeNav="misc" />
   <Breadcrumbs />
   <main id="main-content">
-    <section id="miscs" class="prose mb-28 max-w-3xl prose-img:border-0">
-      <h1 class="text-2xl tracking-wider sm:text-3xl">Miscs</h1>
+    <section id="misc" class="prose mb-28 max-w-3xl prose-img:border-0">
+      <h1 class="text-2xl tracking-wider sm:text-3xl">Misc</h1>
       <Image src={localMiscImage} alt="Misc image" />
       <h2>Friends</h2>
       <section

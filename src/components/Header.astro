@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import localLogoImage from "../assets/images/logo.webp";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "miscs" | "about" | "search";
+  activeNav?: "posts" | "tags" | "misc" | "about" | "search";
 }
 
 const { activeNav } = Astro.props;
@@ -68,8 +68,8 @@ const { activeNav } = Astro.props;
             </a>
           </li>
           <li>
-            <a href="/miscs/" class={activeNav === "miscs" ? "active" : ""}>
-              Miscs
+            <a href="/misc/" class={activeNav === "misc" ? "active" : ""}>
+              Misc
             </a>
           </li>
           <li>

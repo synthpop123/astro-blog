@@ -260,16 +260,16 @@ index 72ba2f0..97ccdca 100644
  }[];
 ```
 
-### 添加 Miscs 页面
+### 添加 Misc 页面
 
-在博客中添加一个 Miscs 页面，用于展示一些额外的内容，如友链、听歌观影记录等。首先在 `src/layouts` 目录下添加 `MiscsLayout.astro`：
+在博客中添加一个 Misc 页面，用于展示一些额外的内容，如友链、听歌观影记录等。首先在 `src/layouts` 目录下添加 `MiscLayout.astro`：
 
 ```diff
-diff --git a/src/layouts/MiscsLayout.astro b/src/layouts/MiscsLayout.astro
+diff --git a/src/layouts/MiscLayout.astro b/src/layouts/MiscLayout.astro
 new file mode 100644
 index 0000000..dc7d48f
 --- /dev/null
-+++ b/src/layouts/MiscsLayout.astro
++++ b/src/layouts/MiscLayout.astro
 @@ -0,0 +1,58 @@
 +---
 +import { SITE } from "@config";
@@ -289,10 +289,10 @@ index 0000000..dc7d48f
 +---
 +
 +<Layout title={`${frontmatter.title} | ${SITE.title}`}>
-+  <Header activeNav="miscs" />
++  <Header activeNav="misc" />
 +  <Breadcrumbs />
 +  <main id="main-content">
-+    <section id="miscs" class="prose prose-img:border-0 mb-28 max-w-3xl">
++    <section id="misc" class="prose prose-img:border-0 mb-28 max-w-3xl">
 +      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
 +      <slot />
 +    </section>
@@ -301,7 +301,7 @@ index 0000000..dc7d48f
 +<Footer />
 ```
 
-接下来需要修改 `Header.astro` ，使 Miscs 页面可以正常显示在导航栏中：
+接下来需要修改 `Header.astro` ，使 Misc 页面可以正常显示在导航栏中：
 
 ```diff
 diff --git a/src/components/Header.astro b/src/components/Header.astro
@@ -313,7 +313,7 @@ index 43a4a71..54264c7 100644
 
  export interface Props {
 -  activeNav?: "posts" | "tags" | "about" | "search";
-+  activeNav?: "posts" | "tags" | "miscs" | "about" | "search";
++  activeNav?: "posts" | "tags" | "misc" | "about" | "search";
  }
 
  const { activeNav } = Astro.props;
@@ -322,8 +322,8 @@ index 43a4a71..54264c7 100644
              </a>
            </li>
 +          <li>
-+            <a href="/miscs/" class={activeNav === "miscs" ? "active" : ""}>
-+              Miscs
++            <a href="/misc/" class={activeNav === "misc" ? "active" : ""}>
++              Misc
 +            </a>
 +          </li>
            <li>
@@ -357,7 +357,7 @@ index 43a4a71..54264c7 100644
 
 由于国内的最好用的记录观影记录的平台豆瓣存在各种限制，也并不提供标准可访问的 API，我选择采用相对小众一点的 [Letterboxd](https://letterboxd.com/) 平台来记录自己所看的电影。
 
-同样，我借助开源项目 [letterboxd-embed-landing-page](https://github.com/timciep/letterboxd-embed-landing-page)，将最近的观影记录（包含影评）嵌入到博客中，具体效果可以在博客的 [Miscs](https://blog.lkwplus.com/miscs) 页面查看。
+同样，我借助开源项目 [letterboxd-embed-landing-page](https://github.com/timciep/letterboxd-embed-landing-page)，将最近的观影记录（包含影评）嵌入到博客中，具体效果可以在博客的 [Misc](https://blog.lkwplus.com/misc) 页面查看。
 
 使用方法如下：
 
@@ -365,20 +365,20 @@ index 43a4a71..54264c7 100644
 
    ![](@assets/images/letterboxd-embed.webp)
 
-2. 将网站中生成的 snippet 添加到需要放置的页面的 `Layout.astro` 中，以 Miscs 为例，其中有两点需要注意：
+2. 将网站中生成的 snippet 添加到需要放置的页面的 `Layout.astro` 中，以 Misc 为例，其中有两点需要注意：
 
-   - 将 `letterboxd-embed-wrapper-tc` 放在 id 为 `miscs` 的 `section` 中，以继承原有的样式；
+   - 将 `letterboxd-embed-wrapper-tc` 放在 id 为 `misc` 的 `section` 中，以继承原有的样式；
 
    - 为了适配网站的深色模式，添加了一些自定义的 CSS 样式，注入到插入的 document 的 style 部分。
 
    ```diff
-   diff --git a/src/layouts/MiscsLayout.astro b/src/layouts/MiscsLayout.astro
+   diff --git a/src/layouts/MiscLayout.astro b/src/layouts/MiscLayout.astro
    index c2fb104..dc7d48f 100644
-   --- a/src/layouts/MiscsLayout.astro
-   +++ b/src/layouts/MiscsLayout.astro
+   --- a/src/layouts/MiscLayout.astro
+   +++ b/src/layouts/MiscLayout.astro
    @@ -21,8 +21,38 @@ const { frontmatter } = Astro.props;
       <main id="main-content">
-        <section id="miscs" class="prose prose-img:border-0 mb-28 max-w-3xl">
+        <section id="misc" class="prose prose-img:border-0 mb-28 max-w-3xl">
           <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
    -      <slot />
    +      <slot /><br />
