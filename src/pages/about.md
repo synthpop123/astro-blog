@@ -30,7 +30,7 @@ INTP (**I** **N**eed **T**o slee**P**)
 - **Backend Dev**: Flask, Django, FastAPI, Express
 - **Databases**: MySQL, PostgreSQL, MongoDB, Redis
 - **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible, Zabbix
-- **Miscs**: Linux, MacOS, GraphQL, REST, Vim, Markdown
+- **Misc**: Linux, MacOS, GraphQL, REST, Vim, Markdown
 
 ## About this site
 
