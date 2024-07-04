@@ -60,11 +60,8 @@ Namesevers = damiete.ns.cloudflare.com, robin.ns.cloudflare.com
      Field = 'Hostname'
      Operator = 'equals'
      Vaule = 'your-domain.com'
-     ```
 
-     Expression Preview 如下：
-
-     ```
+     # Expression Preview
      (http.host eq "your-domain.com")
      ```
 
