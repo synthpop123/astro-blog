@@ -1,0 +1,11 @@
+{
+    "schedule": "daily",
+    //"ignoredFiles": [
+    //    "*.jpg",                   // ignore by extension
+    //    "image1.png",              // ignore by filename
+    //    "public/special_images/*", // ignore by folderpath
+    //],
+    "aggressiveCompression": "false", // true|false
+    "compressWiki": "false", // true|false
+    "prTitle" : "chore: Compress img by imgbot",
+}
