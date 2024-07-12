@@ -33,7 +33,7 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // https://shiki.style/themes
-      theme: "andromeeda",
+      theme: "one-dark-pro",
       // 另外，也提供了多种主题
       // https://shiki.style/guide/dual-themes
       // themes: {
