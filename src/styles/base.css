@@ -116,6 +116,11 @@
     @apply bg-skin-card-muted;
   }
 
+
+  /* ===== Code Blocks & Syntax Highlighting ===== */
+  pre:has(code) {
+    @apply border border-skin-line;
+  }
   code,
   blockquote {
     word-wrap: break-word;
