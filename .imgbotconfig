@@ -6,6 +6,7 @@
     //    "public/special_images/*", // ignore by folderpath
     //],
     "aggressiveCompression": "false", // true|false
+    "minKBReduced": 0,
     "compressWiki": "false", // true|false
     "prTitle" : "chore: Compress img by imgbot",
 }
