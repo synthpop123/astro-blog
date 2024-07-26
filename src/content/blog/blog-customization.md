@@ -74,9 +74,9 @@ index 52d3437..cc33c96 100644
 
 ### 修改字体
 
-由于 AstroPaper 主题默认采用的 IBM Plex Mono 字体对于中文支持不佳，我选择将主字体替换为开源中文字体 [霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。
+由于 AstroPaper 主题默认采用的 IBM Plex Mono 字体对于中文支持不佳，我选择将主字体替换为个人更偏好的 [Sono]()，而中文部分则由开源中文字体 [霞鹜文楷](https://github.com/lxgw/LxgwWenKai) 提供。
 
-需要在 `tailwind.config.cjs` 中对 `fontFamily` 的扩展进行修改，将 `IBM Plex Mono` 替换为 `LXGW WenKai Screen`：
+需要在 `tailwind.config.cjs` 中对 `fontFamily` 的 `mono` 字体进行修改，将 `IBM Plex Mono` 替换为 `Sono` 和 `LXGW WenKai Screen`：
 
 ```diff
 diff --git a/tailwind.config.cjs b/tailwind.config.cjs
@@ -86,29 +86,10 @@ index 8e43860..06dacbc 100644
 @@ -55,6 +55,7 @@ module.exports = {
        },
        fontFamily: {
-         mono: ["IBM Plex Mono", "monospace"],
-+        fix: ["LXGW WenKai Screen"],
+-        mono: ["IBM Plex Mono", "monospace"],
++        mono: ["Sono", "LXGW WenKai Screen", "monospace"],
        },
        typography: {
-```
-
-相对应的，需要在 `src/styles/base.css` 中将 `font-mono` 替换为 `font-fix`：
-
-```diff
-diff --git a/src/styles/base.css b/src/styles/base.css
-index 6efa219..7b4de7a 100644
---- a/src/styles/base.css
-+++ b/src/styles/base.css
-@@ -29,48 +29,46 @@
-     display: block;
-   }
-   body {
--    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base
--    selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
-+    @apply bg-skin-fill text-skin-base selection:bg-skin-accent selection:text-skin-inverted flex min-h-[100svh]
-+    flex-col font-fix selection:bg-opacity-70;
-   }
-   section,
 ```
 
 接下来需要引入霞鹜文楷字体的 Stylesheet，为了避免阻塞渲染，可以将 `media` 设置为 `print`，在加载完成后再将 `media` 设置为 `all`。同时，采用饿了么提供的 CDN 提高加载速度，相关代码添加到 `src/layouts/Layout.astro` 中：
@@ -148,14 +129,14 @@ index 5a4a376..72f65e0 100644
 @@ -31,6 +31,7 @@ const { tag, size = "sm" } = Astro.props;
  <style>
    a {
-     @apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
-+    font-family: "IBM Plex Mono" !important;
+-    @apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
++    @apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1 font-mono;
    }
    a svg {
      @apply -mr-5 h-6 w-6 scale-95 text-skin-base opacity-80 group-hover:fill-skin-accent;
 ```
 
-对于第二个问题，在 `src/styles/base.css` 中，将 `pre > code` 的字体强制设定为 `IBM Plex Mono` 即可：
+对于第二个问题，在 `src/styles/base.css` 中，将 `pre > code` 的字体强制设定为 `font-mono` 即可：
 
 ```diff
 diff --git a/src/styles/base.css b/src/styles/base.css
@@ -163,10 +144,10 @@ index 6efa219..7b4de7a 100644
 --- a/src/styles/base.css
 +++ b/src/styles/base.css
 @@ -122,6 +120,33 @@
-   pre > code {
-     white-space: pre;
-+    font-family: "IBM Plex Mono" !important;
-   }
+  pre:has(code) {
+-   @apply border border-skin-line;
++   @apply border border-skin-line font-mono;
+  }
  }
 ```
 

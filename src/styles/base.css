@@ -30,7 +30,7 @@
   }
   body {
     @apply bg-skin-fill text-skin-base selection:bg-skin-accent selection:text-skin-inverted flex min-h-[100svh]
-    flex-col font-fix selection:bg-opacity-70;
+    flex-col font-mono selection:bg-opacity-70;
   }
   section,
   footer {
@@ -119,7 +119,7 @@
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
   pre:has(code) {
-    @apply border border-skin-line;
+    @apply border border-skin-line font-mono;
   }
   code,
   blockquote {
@@ -128,7 +128,6 @@
 
   pre > code {
     white-space: pre;
-    font-family: "IBM Plex Mono" !important;
   }
 
   #hero {
