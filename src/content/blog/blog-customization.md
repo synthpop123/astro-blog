@@ -361,7 +361,7 @@ index 43a4a71..54264c7 100644
 
 使用方法如下：
 
-1. 在项目提供的前端 [Letterboxd Embed Landing Page](https://letterboxd-embed-landing-page.vercel.app/) 中输入自己的 Letterboxd 用户名，点击 `Generate` 按钮，生成嵌入代码，如下图所示：
+1. 在项目提供的前端 [Letterboxd Embed Landing Page](https://letterboxd-embed.timcieplowski.com) 中输入自己的 Letterboxd 用户名，点击 `Generate` 按钮，生成嵌入代码，如下图所示：
 
    ![](@assets/images/letterboxd-embed.webp)
 
