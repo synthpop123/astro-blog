@@ -41,6 +41,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           </svg>
           <span class="sr-only">RSS Feed</span>
         </a>
+        <h2><span class="no-accent">Be</span> Creative <span class="no-accent">& Keep</span> Learning</h2>
       </div>
       {
         // only display if at least one social link is enabled
@@ -115,7 +116,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply pb-6 pt-8;
   }
   #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    @apply my-4 inline-block text-3xl font-bold sm:my-6 sm:text-5xl;
+  }
+  #hero h2 {
+    @apply text-lg font-medium text-skin-accent;
+  }
+  #hero h2 .no-accent {
+    @apply font-normal text-skin-base;
   }
   #hero .rss-link {
     @apply mb-6;

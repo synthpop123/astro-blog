@@ -13,8 +13,6 @@ title: "About"
 
 INTP (**I** **N**eed **T**o slee**P**)
 
-> Be **Creative** & Keep **Learning**
-
 ## How to reach me?
 
 - Homepage: [www.lkwplus.com](http://www.lkwplus.com)
