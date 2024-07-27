@@ -1,6 +1,7 @@
 ---
 author: lkw123
 pubDatetime: 2024-03-05T10:00:00+08:00
+modDatetime: 2024-07-03
 title: 我的 MacOS 开发环境配置
 slug: macos-dev-setup
 featured: true
