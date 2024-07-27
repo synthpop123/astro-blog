@@ -76,7 +76,7 @@ const friends = [
 </Layout>
 
 <script>
-  fetch("https://lb-embed-content.bokonon.dev?username=lkw123")
+  fetch("https://letterboxd-embed.lkwplus.com?username=lkw123")
     .then(response => response.text())
     .then(data => {
       const element = document.getElementById("letterboxd-embed-wrapper-tc");
@@ -94,9 +94,6 @@ const friends = [
             }
             html[data-theme="dark"] .letterboxd-embed-tc-review {
                 color: lightgray !important;
-            }
-            .letterboxd-embed-tc-review {
-                font-size: 0.9rem !important;
             }
         `;
       if (element) {

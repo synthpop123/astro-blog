@@ -340,13 +340,13 @@ index 43a4a71..54264c7 100644
 
 同样，我借助开源项目 [letterboxd-embed-landing-page](https://github.com/timciep/letterboxd-embed-landing-page)，将最近的观影记录（包含影评）嵌入到博客中，具体效果可以在博客的 [Misc](https://blog.lkwplus.com/misc) 页面查看。
 
-使用方法如下：
-
-1. 在项目提供的前端 [Letterboxd Embed Landing Page](https://letterboxd-embed.timcieplowski.com) 中输入自己的 Letterboxd 用户名，点击 `Generate` 按钮，生成嵌入代码，如下图所示：
+1. 在项目提供的 [前端](https://letterboxd-embed.timcieplowski.com) 中输入自己的 Letterboxd 用户名，点击 `Generate` 按钮，生成嵌入代码，如下图所示：
 
    ![](@assets/images/letterboxd-embed.webp)
 
-2. 将网站中生成的 snippet 添加到需要放置的页面的 `Layout.astro` 中，以 Misc 为例，其中有两点需要注意：
+2. 个人通过 Cloudflare Workers 自部署了 [timciep/letterboxd-diary-embed](https://github.com/timciep/letterboxd-diary-embed)，也就是该项目的后端，用于处理相关请求，并简单的修改了一些自定义样式，可以通过 [https://letterboxd-embed.lkwplus.com?username={username}](https://letterboxd-embed.lkwplus.com?username=lkw123) 的形式访问。
+
+3. 将网站中生成的 snippet 添加到需要放置的页面的 `Layout.astro` 中，以 Misc 为例，其中有两点需要注意：
 
    - 将 `letterboxd-embed-wrapper-tc` 放在 id 为 `misc` 的 `section` 中，以继承原有的样式；
 
@@ -369,7 +369,7 @@ index 43a4a71..54264c7 100644
    -  <Footer />
     </Layout>
    +<script>
-   +  fetch("https://lb-embed-content.bokonon.dev?username=lkw123")
+   +  fetch("https://letterboxd-embed.lkwplus.com?username=lkw123")
    +    .then(response => response.text())
    +    .then(data => {
    +      const element = document.getElementById("letterboxd-embed-wrapper-tc");
@@ -387,9 +387,6 @@ index 43a4a71..54264c7 100644
    +            }
    +            html[data-theme="dark"] .letterboxd-embed-tc-review {
    +                color: lightgray !important;
-   +            }
-   +            .letterboxd-embed-tc-review {
-   +                font-size: 0.9rem !important;
    +            }
    +        `;
    +      if (element) {
