@@ -6,11 +6,12 @@ const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
     .filter(postFilter)
     .sort(
       (a, b) =>
+        // Sort by pubDatetime
         Math.floor(
-          new Date(b.data.modDatetime ?? b.data.pubDatetime).getTime() / 1000
+          new Date(b.data.pubDatetime ?? b.data.modDatetime).getTime() / 1000
         ) -
         Math.floor(
-          new Date(a.data.modDatetime ?? a.data.pubDatetime).getTime() / 1000
+          new Date(a.data.pubDatetime ?? a.data.modDatetime).getTime() / 1000
         )
     );
 };
