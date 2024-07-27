@@ -45,18 +45,20 @@ export default defineConfig({
       remarkMath,
       ...
     ],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [[rehypeKatex, { strict: false }]],
     ...
   },
 });
 ```
+
+PS：KaTeX 的这个套件的 `strict` 参数的预设值为 `warn`，也就是在进行准换过程中，如果遇到汉字等不符合规范的字符，会发出警告。而将 `strict` 参数设置为 `false`，可以消除这些警告。
 
 ## 添加 KaTeX 样式表引入
 
 为引入 KaTeX 的 stylesheet，需在 `src/layouts/Layout.astro` 中添加：
 
 ```html
-<!-- Katex -->
+<!-- KaTeX -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"

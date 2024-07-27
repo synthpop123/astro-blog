@@ -30,7 +30,7 @@ export default defineConfig({
         },
       ],
     ],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [[rehypeKatex, { strict: false }]],
     shikiConfig: {
       // https://shiki.style/themes
       theme: "one-dark-pro",

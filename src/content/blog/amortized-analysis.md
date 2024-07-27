@@ -71,10 +71,10 @@ MULTIPOP(S, k)
 
 $$
 \begin{array}{|c | c |c |}\hline
-     \textbf{ 操作 } & \textbf{ 实际代价 } & \textbf{ 摊还代价 } \\\hline
-     \text{PUSH} & \mathbf{1} & \mathbf{2} \\\hline
-     \text{POP} & \mathbf{1} & \mathbf{0} \\\hline
-     \text{MULTIPOP} & \min (\boldsymbol{k}, \boldsymbol{s}) & \mathbf{0} \\\hline
+     \textbf{ 操作 } & \textbf{ 实际代价 } & \textbf{ 摊还代价 } \\ \hline
+     \text{PUSH} & \mathbf{1} & \mathbf{2} \\ \hline
+     \text{POP} & \mathbf{1} & \mathbf{0} \\ \hline
+     \text{MULTIPOP} & \min (\boldsymbol{k}, \boldsymbol{s}) & \mathbf{0} \\ \hline
 \end{array}
 $$
 
@@ -104,7 +104,7 @@ $$
 
 $$
 \begin{aligned}
-\sum_{i=1}^{n} \hat c_{i} &= \sum_{i=1}^{n}\left(c_{i} + \Phi\left(D_{i}\right)- \Phi\left(D_{i-1}\right)\right) \\\ &= \sum_{i=1}^{n} c_{i} + \Phi\left(D_{n}\right)- \Phi\left(D_{0}\right)
+\sum_{i=1}^{n} \hat c_{i} &= \sum_{i=1}^{n}\left(c_{i} + \Phi\left(D_{i}\right)- \Phi\left(D_{i-1}\right)\right) \\ &= \sum_{i=1}^{n} c_{i} + \Phi\left(D_{n}\right)- \Phi\left(D_{0}\right)
 \end{aligned}
 $$
 
@@ -155,7 +155,7 @@ $$
 
 $$
 \begin{aligned}
-\sum_{i = 1}^n c(i) & = \sum_{i = 1}^{\left\lceil\lg n\right\rceil} 2^i + \sum_{i \leqslant n \text{ is not a power of } 2} 1 \\\ & \leqslant \sum_{i = 1}^{\left\lceil\lg n\right\rceil} 2^i + n \\\ & = 2^{1 + \left\lceil\lg n\right\rceil} - 1 + n \\\ & \leqslant 2n - 1 + n \\\ & \leqslant 3n \in O(n).
+\sum_{i = 1}^n c(i) & = \sum_{i = 1}^{\left\lceil\lg n\right\rceil} 2^i + \sum_{i \leqslant n \text{ is not a power of } 2} 1 \\ & \leqslant \sum_{i = 1}^{\left\lceil\lg n\right\rceil} 2^i + n \\ & = 2^{1 + \left\lceil\lg n\right\rceil} - 1 + n \\ & \leqslant 2n - 1 + n \\ & \leqslant 3n \in O(n).
 \end{aligned}
 $$
 
@@ -168,7 +168,7 @@ To find the average, we divide by $n$, and the amortized cost per operation is $
 **Solution**: Let $c_i =$ cost of $i\th$ operation.
 
 $$
- c_i = \begin{cases} i & \text{if $i$ is an exact power of $2$}, \\\ 1 & \text{otherwise}. \end{cases}
+ c_i = \begin{cases} i & \text{if $i$ is an exact power of $2$}, \\ 1 & \text{otherwise}. \end{cases}
 $$
 
 Charge $3$ (amortized cost $\hat c_i$) for each operation.
@@ -177,7 +177,7 @@ Charge $3$ (amortized cost $\hat c_i$) for each operation.
 - If $i$ is an exact power of 2, pay $i$, using stored credit.
 
 $$
-\begin{array}{cccc} \textbf{Operation} & \textbf{Cost} & \textbf{Actual cost} & \textbf{Credit remaining} \\ \hline 1 & 3 & 1 & 2 \\\ 2 & 3 & 2 & 3 \\\ 3 & 3 & 1 & 5 \\\ 4 & 3 & 4 & 4 \\\ 5 & 3 & 1 & 6 \\\ 6 & 3 & 1 & 8 \\\ 7 & 3 & 1 & 10 \\\ 8 & 3 & 8 & 5 \\\ 9 & 3 & 1 & 7 \\\ 10 & 3 & 1 & 9 \\\ \vdots & \vdots & \vdots & \vdots \end{array}
+\begin{array}{cccc} \textbf{Operation} & \textbf{Cost} & \textbf{Actual cost} & \textbf{Credit remaining} \\ \hline 1 & 3 & 1 & 2 \\ 2 & 3 & 2 & 3 \\ 3 & 3 & 1 & 5 \\ 4 & 3 & 4 & 4 \\ 5 & 3 & 1 & 6 \\ 6 & 3 & 1 & 8 \\ 7 & 3 & 1 & 10 \\ 8 & 3 & 8 & 5 \\ 9 & 3 & 1 & 7 \\ 10 & 3 & 1 & 9 \\ \vdots & \vdots & \vdots & \vdots \end{array}
 $$
 
 Since the amortized cost is $3$ per operation, $\sum\limits_{i = 1}^n \hat c_i = 3n$.
@@ -199,14 +199,14 @@ Since the amortized cost of each operation is $O(1)$, and the amount of credit n
 **Solution**: Define the potential function $\Phi(D_0) = 0$, and $\Phi(D_i) = 2i - 2^{1 + \lfloor \lg i \rfloor}$ for $i > 0$. For operation 1,
 
 $$
-\begin{aligned}\hat c_i &= c_i + \Phi(D_i) - \Phi(D_{i - 1}) \\\ &= 1 + 2i - 2^{1+ \lfloor \lg i \rfloor} - 0 \\\ &= 1.\end{aligned}
+\begin{aligned}\hat c_i &= c_i + \Phi(D_i) - \Phi(D_{i - 1}) \\ &= 1 + 2i - 2^{1+ \lfloor \lg i \rfloor} - 0 \\ &= 1.\end{aligned}
 $$
 
 For operation $i(i > 1)$, if $i$ is not a power of 2, then
 
 $$
 \begin{aligned}
-\hat c_i &= c_i + \Phi(D_i) - \Phi(D_{i - 1}) \\\ &= 1 + 2i - 2^{1 + \lfloor \lg 1 \rfloor} - (2(i - 1) - 2^{1 + \lfloor \lg(i - 1) \rfloor})\\\ &= 3.
+\hat c_i &= c_i + \Phi(D_i) - \Phi(D_{i - 1}) \\ &= 1 + 2i - 2^{1 + \lfloor \lg 1 \rfloor} - (2(i - 1) - 2^{1 + \lfloor \lg(i - 1) \rfloor})\\ &= 3.
 \end{aligned}
 $$
 
@@ -214,7 +214,7 @@ If $i = 2^j$ for some $j \in \mathbb N$, then
 
 $$
 \begin{aligned}
-\hat c_i &= c_i + \Phi(D_i) - \Phi(D_{i - 1}) \\\ & = i + 2i - 2^{1 + j}-(2(i - 1) - 2^{1 + j - 1}) \\\ &= i + 2i - 2i - 2i + 2 + i \\\ &= 2.
+\hat c_i &= c_i + \Phi(D_i) - \Phi(D_{i - 1}) \\ & = i + 2i - 2^{1 + j}-(2(i - 1) - 2^{1 + j - 1}) \\ &= i + 2i - 2i - 2i + 2 + i \\ &= 2.
 \end{aligned}
 $$
 

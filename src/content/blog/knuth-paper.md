@@ -51,9 +51,9 @@ description: "Reading notes on 「Mathematical Analysis of Algorithms」 by Dona
 以如下排列 $p$ 为例：
 
 $$
-\begin{array}{|c | c| c| c| c | c| c| c| c|c |}\hline
-     \textbf{i } & \textbf{1} & \textbf{2}&\textbf{3} &\textbf{4} & \textbf{5} &\textbf{6} &\textbf{7} &\textbf{8} &\textbf{9} \\\hline
-     \text{p(i)}& \text{8}           & \text{2} & \text{7}& \text{1}& \text{6}& \text{9}& \text{3}& \text{4}& \text{5}\\\hline
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|}\hline
+  \textbf{i } & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
+  \text{p(i)} & \text{8}   & \text{2}   & \text{7}   & \text{1}   & \text{6}   & \text{9}   & \text{3}   & \text{4}   & \text{5}   \\ \hline
 \end{array}
 $$
 
@@ -61,9 +61,10 @@ $$
 
 $$
 \begin{cases}
-\begin{aligned}
-p(1)&=8, p(8)=4, p(4)=1 \\\ p(2)&=2 \\\ p(3)&=7, p(7)=3 \\\ p(5)&=6, p(6)=9, p(9)=5
-\end{aligned}
+p(1)=8, p(8)=4, p(4)=1 \\
+p(2)=2 \\
+p(3)=7, p(7)=3 \\
+p(5)=6, p(6)=9, p(9)=5
 \end{cases}
 $$
 
@@ -115,10 +116,10 @@ $$
 H_{n}=1+\frac{1}{2}+\cdots+\frac{1}{n} \quad \text { and } \quad H_{n}^{(2)}=1+\frac{1}{4}+\cdots+\frac{1}{n^{2}}
 $$
 
-接下来我们同样可以对 a 的值进行分析。当循环变量 `j = q(i)` 时，_k_ 一直往后执行到 $q(i + r)$，满足 $q(i+r)<q(i)$ 抑或 $q(i)$ 为环的头元素，因此会从 $q(i)$ 到 $q(i + r)$ 执行运算，于是，令：
+接下来我们同样可以对 a 的值进行分析。当循环变量 `j = q(i)` 时，_k_ 一直往后执行到 $q(i + r)$，满足 $q(i+r)<q(i)$ 亦或 $q(i)$ 为环的头元素，因此会从 $q(i)$ 到 $q(i+r)$ 执行运算，于是，令：
 
 $$
-y_{ij} = \begin{cases} 1, if\ q(i) < q(k)\ for\ i < k \leqslant j \\\ 0, \ otherwise \end {cases}
+y_{ij} = \begin{cases} 1, if\ q(i) < q(k)\ for\ i < k \leqslant j \\ 0, \ otherwise \end {cases}
 $$
 
 那么
@@ -133,7 +134,7 @@ $$
 
 $$
 \begin{aligned}
-\overline a=\sum_{1 \leqslant i<j \leqslant n} \overline y_{i j} &=\sum_{1 \leqslant i<j \leqslant n} \frac{1}{j-i+1} \\\ &=\sum_{2 \leqslant r \leqslant n} \frac{n+1-r}{r}
+  \overline a=\sum_{1 \leqslant i<j \leqslant n} \overline y_{i j} &=\sum_{1 \leqslant i<j \leqslant n} \frac{1}{j-i+1} \\ &=\sum_{2 \leqslant r \leqslant n} \frac{n+1-r}{r}
 \end{aligned}
 $$
 
@@ -148,16 +149,16 @@ $$
 接下来我们对 a 的方差进行求解，我们需要计算下面式子的平均值：
 
 $$
-\begin{aligned}\left(\sum_{1 \leqslant i<j \leqslant n} y_{i j}\right)^{2}=&\sum_{1 \leqslant i<j \leqslant n} y_{i j}^{2}+\sum_{\substack{1 \leqslant i<j \leqslant n \\\ 1 \leqslant k<l \leqslant n \\\ (i, j) \neq(k, l)}} y_{i j} y_{k l} \\\ =&\sum_{1 \leqslant i<j \leqslant n} \overline y_{i j} +2 \sum_{1 \leqslant i<j<k<l \leqslant n}\left(y_{i j} y_{k l}+y_{i k} y_{j l}+y_{i l} y_{j k}\right) \\\ & +2 \sum_{1 \leqslant i<j<k \leqslant n}\left(y_{i j} y_{j k}+y_{i k} y_{j k}+y_{i j} y_{i k}\right) \\\ =& \overline a+2(A+B+C+D+E+F)\end{aligned}
+\begin{aligned}\left(\sum_{1 \leqslant i<j \leqslant n} y_{i j}\right)^{2}=&\sum_{1 \leqslant i<j \leqslant n} y_{i j}^{2}+\sum_{\substack{1 \leqslant i<j \leqslant n \\ 1 \leqslant k<l \leqslant n \\ (i, j) \neq(k, l)}} y_{i j} y_{k l} \\ =&\sum_{1 \leqslant i<j \leqslant n} \overline y_{i j} +2 \sum_{1 \leqslant i<j<k<l \leqslant n}\left(y_{i j} y_{k l}+y_{i k} y_{j l}+y_{i l} y_{j k}\right) \\ & +2 \sum_{1 \leqslant i<j<k \leqslant n}\left(y_{i j} y_{j k}+y_{i k} y_{j k}+y_{i j} y_{i k}\right) \\ =& \overline a+2(A+B+C+D+E+F)\end{aligned}
 $$
 
 接下来便是一系列繁杂的数学运算过程：
 
 $$
 \begin{array}{ll}
-B=\left(\begin{array}{l} n \\\ 2
-\end{array}\right)-2 Z, & C=Y-Z-2\left(\begin{array}{l} n \\\ 2
-\end{array}\right)+3 X \\\ D=E=Z-X, & F=\left(\begin{array}{l} n \\\ 2
+B=\left(\begin{array}{l} n \\ 2
+\end{array}\right)-2 Z, & C=Y-Z-2\left(\begin{array}{l} n \\ 2
+\end{array}\right)+3 X \\ D=E=Z-X, & F=\left(\begin{array}{l} n \\ 2
 \end{array}\right)-2 X
 \end{array}
 $$
@@ -166,15 +167,17 @@ $$
 
 $$
 \begin{aligned}
-X &=\sum_{1 \leqslant i<j \leqslant n} \frac{1}{j-i+1} \\\ Y &=\sum_{1 \leqslant i<j \leqslant n} H_{j-i} \\\ Z &=\sum_{1 \leqslant i<j \leqslant n} \frac{1}{j-i+1} H_{j-i}
+	X & =\sum_{1 \leqslant i<j \leqslant n}\frac{1}{j-i+1}        \\
+	Y & =\sum_{1 \leqslant i<j \leqslant n}H_{j-i}                \\
+	Z & =\sum_{1 \leqslant i<j \leqslant n}\frac{1}{j-i+1}H_{j-i}
 \end{aligned}
 $$
 
-将 $r = j − i + 1$ 代入可得：
+将 $r = j−i+1$ 代入可得：
 
 $$
 \begin{aligned}
-X&=(n+1) H_{n}-2 n \\\ Y&=\frac{1}{2}\left(n^{2}+n\right) H_{n}-\frac{3}{4} n^{2}-\frac{1}{4} n \\\ Z&=\frac{1}{2}(n+1)\left(H_{n}^{2}-H_{n}^{(2)}\right)-n H_{n}+n
+X&=(n+1) H_{n}-2 n \\ Y&=\frac{1}{2}\left(n^{2}+n\right) H_{n}-\frac{3}{4} n^{2}-\frac{1}{4} n \\ Z&=\frac{1}{2}(n+1)\left(H_{n}^{2}-H_{n}^{(2)}\right)-n H_{n}+n
 \end{aligned}
 $$
 
@@ -182,10 +185,10 @@ $$
 
 $$
 \begin{aligned}
-A &=\sum_{1 \leqslant i<j<k<l \leqslant n} \frac{1}{(j-i+1)(l-k+1)} \\\ &=\sum_{\substack{r \geqslant 2 \\\ s \geqslant 2 \\\ r+s \leqslant n}} \frac{1}{r s}\left(\begin{array}{c} n-r-s+2 \\\ 2
-\end{array}\right)\\\ &=\sum_{\substack{2 \leqslant r \leqslant t-2 \\\ 4 \leqslant t \leqslant n}} \frac{1}{t}\left(\frac{1}{r}+\frac{1}{t-r}\right)\left(\begin{array}{c} n-t+2 \\\ 2
-\end{array}\right)\\\ &=2 \sum_{\substack{2 \leqslant r \leqslant t-2 \\\ 4 \leqslant t \leqslant n}} \frac{1}{r t}\left(\begin{array}{c} n-t+2 \\\ 2
-\end{array}\right) \\\ &=\sum_{\substack{2 \leqslant r \leqslant t-2 \\\ 4 \leqslant t \leqslant n}} \frac{1}{r t}\left((n+2)(n+1)-t(2 n+3)+t^{2}\right) \\\ &=(n+2)(n+1) U-(2 n+3) V+W
+A &=\sum_{1 \leqslant i<j<k<l \leqslant n} \frac{1}{(j-i+1)(l-k+1)} \\ &=\sum_{\substack{r \geqslant 2 \\ s \geqslant 2 \\ r+s \leqslant n}} \frac{1}{r s}\left(\begin{array}{c} n-r-s+2 \\ 2
+\end{array}\right)\\ &=\sum_{\substack{2 \leqslant r \leqslant t-2 \\ 4 \leqslant t \leqslant n}} \frac{1}{t}\left(\frac{1}{r}+\frac{1}{t-r}\right)\left(\begin{array}{c} n-t+2 \\ 2
+\end{array}\right)\\ &=2 \sum_{\substack{2 \leqslant r \leqslant t-2 \\ 4 \leqslant t \leqslant n}} \frac{1}{r t}\left(\begin{array}{c} n-t+2 \\ 2
+\end{array}\right) \\ &=\sum_{\substack{2 \leqslant r \leqslant t-2 \\ 4 \leqslant t \leqslant n}} \frac{1}{r t}\left((n+2)(n+1)-t(2 n+3)+t^{2}\right) \\ &=(n+2)(n+1) U-(2 n+3) V+W
 \end{aligned}
 $$
 
@@ -193,7 +196,7 @@ $$
 
 $$
 \begin{aligned}
-U&=\frac{1}{2}\left(H_{n}-1\right)^{2}-\frac{1}{2} H_{n}^{(2)}+\frac{1}{n} \\\ V&=(n-1) H_{n-2}-2 n+4 \\\ W&=\frac{1}{2}\left(\left(n^{2}+n-2\right)\left(H_{n-2}-1\right)-\frac{1}{2}(n-1)(n-2)+1-3(n-3)\right)
+U&=\frac{1}{2}\left(H_{n}-1\right)^{2}-\frac{1}{2} H_{n}^{(2)}+\frac{1}{n} \\ V&=(n-1) H_{n-2}-2 n+4 \\ W&=\frac{1}{2}\left(\left(n^{2}+n-2\right)\left(H_{n-2}-1\right)-\frac{1}{2}(n-1)(n-2)+1-3(n-3)\right)
 \end{aligned}
 $$
 
@@ -207,11 +210,11 @@ $$
 
 $$
 \begin{aligned}
-a&=(\min 0, \text { ave } n \ln n+O(n), \max \frac{1}{2}(n^{2}-n),\text{dev} \sqrt{2-\pi^{2} / 6} n+O(\log n)) ; \\\ b&=(\min 1, \text { ave } \ln n+O(1), \max n, \text{dev} \sqrt{\ln n}+O(1))
+a&=(\min 0, \text { ave } n \ln n+O(n), \max \frac{1}{2}(n^{2}-n),\text{dev} \sqrt{2-\pi^{2} / 6} n+O(\log n)) ; \\ b&=(\min 1, \text { ave } \ln n+O(1), \max n, \text{dev} \sqrt{\ln n}+O(1))
 \end{aligned}
 $$
 
-可以得出结论：**这个算法的平均时间复杂度为 $O(n\log  n)$，在极少数情况下可能达到 $O(n2)$**。
+可以得出结论：**这个算法的平均时间复杂度为 $O(n\log n)$，在极少数情况下可能达到 $O(n2)$**。
 
 ### 进一步分析
 
@@ -221,7 +224,7 @@ $$
 
 $$
 \begin{aligned}
-f(1)&=0 \\\ f(n)&=\max _{1 \leqslant k<n}(\min (k, n-k)+f(k)+f(n-k))
+f(1)&=0 \\ f(n)&=\max _{1 \leqslant k<n}(\min (k, n-k)+f(k)+f(n-k))
 \end{aligned}
 $$
 
@@ -275,7 +278,7 @@ FindtthNumber(a, i, j, t):
 对子问题的限定仅与两个变量有关：数组的长度 n 以及 所要找的数的位次 t，因此我们可以记子问题为 $C_{n,t}$，假设 t 的选取完全随机，那么
 
 $$
-\begin{aligned}C_{1,1}&=0 \\\ C_{n, t}&=n-1+\frac{1}{n}\left(A_{n, t}+B_{n, t}\right)\end{aligned}
+\begin{aligned}C_{1,1}&=0 \\ C_{n, t}&=n-1+\frac{1}{n}\left(A_{n, t}+B_{n, t}\right)\end{aligned}
 $$
 
 其中 $A_{n, t}$ 对应伪代码中 `k < t` 的情形：
@@ -293,28 +296,32 @@ $$
 经过观察，我们发现
 
 $$
-A_{n+1,t+1} = A_{n,t}+C_{n,t}\\\ B_{n+1,t} = B_{n,t}+C_{n,t}
+\begin{aligned}
+   A_{n+1,t+1} &= A_{n,t}+C_{n,t}\\ B_{n+1,t} &= B_{n,t}+C_{n,t}
+\end{aligned}
 $$
 
 使用差消迭代法，进行如下操作
 
 $$
 \begin{aligned}
-&(n+1)C_{n+1,t+1}-nC_{n,t+1}-nC_{n,t}+(n-1)C_{n-1,t} \\\ =& (n+1)n - n(n-1) - n(n-1) + (n-1)(n-2) \\\ &+ A_{n+1,t+1}-A_{n,t+1}-A_{n,t}+A_{n-1,t} \\\ &+B_{n+1,t+1}-B_{n,t+1}-B_{n,t}+B_{n-1,t} \\\ =& 2 + C_{n,t} - C_{n-1,t}+C_{n,t+1}-C_{n-1,t}
+&(n+1)C_{n+1,t+1}-nC_{n,t+1}-nC_{n,t}+(n-1)C_{n-1,t} \\ =& (n+1)n - n(n-1) - n(n-1) + (n-1)(n-2) \\ &+ A_{n+1,t+1}-A_{n,t+1}-A_{n,t}+A_{n-1,t} \\ &+B_{n+1,t+1}-B_{n,t+1}-B_{n,t}+B_{n-1,t} \\ =& 2 + C_{n,t} - C_{n-1,t}+C_{n,t+1}-C_{n-1,t}
 \end{aligned}
 $$
 
 进而推出
 
 $$
-C_{n+1, t+1}-C_{n, t+1}-C_{n, t}+C_{n-1, t}=\frac{2}{n+1}\\\left(C_{n+1, t+1}-C_{n, t}\right)-\left(C_{n, t+1}-C_{n-1, t}\right)=\frac{2}{n+1}
+\begin{aligned}
+   C_{n+1, t+1}-C_{n, t+1}-C_{n, t}+C_{n-1, t}&=\frac{2}{n+1}\\ \left(C_{n+1, t+1}-C_{n, t}\right)-\left(C_{n, t+1}-C_{n-1, t}\right)&=\frac{2}{n+1}
+\end{aligned}
 $$
 
 由此，
 
 $$
 \begin{aligned}
-C_{n+1, t+1}-C_{n, t} &=\frac{2}{n+1}+\frac{2}{n}+\cdots+\frac{2}{t+2}+C_{t+1, t+1}-C_{t, t} \\\ &=2\left(H_{n+1}-H_{t+1}\right)+2-2 /(t+1)
+C_{n+1, t+1}-C_{n, t} &=\frac{2}{n+1}+\frac{2}{n}+\cdots+\frac{2}{t+2}+C_{t+1, t+1}-C_{t, t} \\ &=2\left(H_{n+1}-H_{t+1}\right)+2-2 /(t+1)
 \end{aligned}
 $$
 
