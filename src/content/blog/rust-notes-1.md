@@ -1,7 +1,8 @@
 ---
 author: lkw123
 pubDatetime: 2024-02-20T10:00:00+08:00
-title: Rust 学习笔记（一）
+modDatetime: 2024-07-29
+title: Rust 学习笔记
 slug: rust-notes-1
 featured: false
 draft: false
@@ -14,21 +15,22 @@ description: "Learning Rust: Basic ideas, installation, and crates.io mirror"
 
 ## Rust 安装
 
-对于 MacOS 用户，不推荐使用 `brew install rust` 的指令配置 Rust 环境，因为无法通过 rustup 工具来进行版本管理。因此我们选择直接安装 rustup 工具，它会自动安装并配置最新版本的 Rust 编译器和 Cargo 包管理器。
+对于 MacOS 用户，不推荐直接使用 `brew install rust` 的指令配置 Rust 环境，因为无法通过 rustup 工具来进行版本管理：
 
 ```bash
-$ brew install rustup-init
-$ rustup-init
+$ brew install rustup
+# To initialize `rustup`, set a default toolchain:
+$ rustup default stable
 ```
 
 测试是否安装成功：
 
 ```bash
 $ rustc --version
-rustc 1.78.0 (9b00956e5 2024-04-29)
+rustc 1.79.0 (129f3b996 2024-06-10)
 
 $ cargo --version
-cargo 1.78.0 (54d8815d0 2024-03-26)
+cargo 1.79.0 (ffa9cf99a 2024-06-03)
 ```
 
 ## [crates.io](https://crates.io/) 换源
@@ -37,9 +39,11 @@ cargo 1.78.0 (54d8815d0 2024-03-26)
 
 > 自 Cargo 1.68 版本起，支持**稀疏索引** (Sparse Index)：不再需要完整克隆 crates.io-index 仓库，从而可以加快获取包的速度。
 
-以字节跳动提供的的 Cargo 公益镜像源 [rsproxy](https://rsproxy.cn/) 为例，更改配置文件 `$HOME/.cargo/config.toml` 如下：
+以选用字节跳动提供的的 Cargo 公益镜像源 [rsproxy](https://rsproxy.cn/) 为例，更改配置文件如下：
 
 ```toml
+# $HOME/.cargo/config.toml
+
 [source.crates-io]
 replace-with = 'rsproxy-sparse'
 [source.rsproxy]
