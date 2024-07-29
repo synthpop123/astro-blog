@@ -23,11 +23,11 @@ INTP (**I** **N**eed **T**o slee**P**)
 
 ## Tech Skills
 
-- **Languages**: C/C++, Python, JavaScipt, Rust, Golang, Shell Script
-- **Frontend Dev**: HTML, CSS, Bootstrap, Tailwind CSS, React, Vue, Next.js, Astro
+- **Languages**: C/C++, Python, JavaScipt, Node.js, Rust, Golang, Shell Script
+- **Frontend Dev**: HTML, CSS, Bootstrap, Tailwind CSS, React, Vue.js, Astro
 - **Backend Dev**: Flask, Django, FastAPI, Express
 - **Databases**: MySQL, PostgreSQL, MongoDB, Redis
-- **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible, Zabbix
+- **DevOps**: Docker, Kubernetes, VMWare, Git/SVN, Grafana, Ansible
 - **Misc**: Linux, MacOS, GraphQL, REST, Vim, Markdown
 
 ## About this site
