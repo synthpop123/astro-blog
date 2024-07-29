@@ -3,7 +3,7 @@ author: lkw123
 pubDatetime: 2024-02-20T10:00:00+08:00
 modDatetime: 2024-07-29
 title: Rust 学习笔记
-slug: rust-notes-1
+slug: rust-notes
 featured: false
 draft: false
 tags:
@@ -15,7 +15,7 @@ description: "Learning Rust: Basic ideas, installation, and crates.io mirror"
 
 ## Rust 安装
 
-对于 MacOS 用户，不推荐直接使用 `brew install rust` 的指令配置 Rust 环境，因为无法通过 rustup 工具来进行版本管理：
+对于 MacOS 用户，不推荐直接使用 `brew install rust` 的指令配置 Rust 环境，因为无法通过 [rustup](https://github.com/rust-lang/rustup) 工具来进行版本管理：
 
 ```bash
 $ brew install rustup
