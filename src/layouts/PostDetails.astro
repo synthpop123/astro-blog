@@ -24,6 +24,7 @@ const {
   pubDatetime,
   modDatetime,
   tags,
+  katex,
 } = post.data;
 
 const { Content } = await post.render();
@@ -43,19 +44,12 @@ const layoutProps = {
   canonicalURL,
   ogImage: ogUrl,
   scrollSmooth: true,
+  katex,
 };
 ---
 
 <Layout {...layoutProps}>
   <Header />
-
-  <!-- KaTeX -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
-    integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
-    crossorigin="anonymous"
-  />
 
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button

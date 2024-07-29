@@ -13,6 +13,7 @@
       "tags:",
       "  - $7",
       "description: $8",
+      "katex: ${9|false,true|}",
       "---",
     ],
     "description": "Adds the frontmatter block for the AstroPaper Blog post"
