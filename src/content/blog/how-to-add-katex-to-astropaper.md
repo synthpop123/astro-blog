@@ -1,13 +1,14 @@
 ---
 author: lkw123
 pubDatetime: 2024-02-23T20:00:00+08:00
-modDatetime: 2024-07-27
+modDatetime: 2024-07-30
 title: 为 AstroPaper 主题添加 KaTeX 支持
 slug: how-to-add-katex-to-astropaper
 featured: false
 draft: false
 tags:
   - Blog
+  - Astro
 description: How you can add KaTeX to AstroPaper theme
 ---
 
@@ -15,16 +16,15 @@ description: How you can add KaTeX to AstroPaper theme
 
 ## Table of contents
 
-## 安装依赖项
+## 安装相关依赖项
 
-为了使博客的本地构建可以正常运行，我们需要安装相关依赖项：
+首先，我们通过个人喜好的包管理器安装以下依赖项：
 
 - `remark-math`：用于解析 Markdown 中的数学公式；
 - `rehype-katex`：用于将数学公式渲染为 HTML。
 
 ```bash
-npm install remark-math
-npm install rehype-katex
+pnpm add remark-math rehype-katex
 ```
 
 ## 修改博客 astro.config.mjs
@@ -58,14 +58,14 @@ PS：KaTeX 的这个套件的 `strict` 参数的预设值为 `warn`，也就是�
 
 ## 添加 KaTeX 样式表引入
 
-为引入 KaTeX 的 stylesheet，需在 `src/layouts/Layout.astro` 中添加：
+为引入 KaTeX 的 stylesheet，需在 `src/layouts/Layout.astro` 中在 Header 部分添加：
 
 ```html
 <!-- KaTeX -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
-  integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+  integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
   crossorigin="anonymous"
 />
 ```
@@ -86,3 +86,93 @@ PS：KaTeX 的这个套件的 `strict` 参数的预设值为 `warn`，也就是�
 ```
 
 在进行本地构建后，`package.json` 和 `package-lock.json` 文件会自动修改。至此，AstroPaper 博客主题已支持 KaTeX 渲染。
+
+## 可选：给博文新增 KaTeX Frontmatter 开关
+
+经过以上的步骤，KaTeX 的 JavaScript 静态文件会全局引入，出现在几乎所有页面的 Header 中，这意味着打开博客的任意一篇文章都会加载 KaTeX 的相关资源，这显然是可以进一步优化的。
+
+我们可以通过在博文的 Frontmatter 中新增 `katex` 开关，来控制是否加载 KaTeX 的相关资源：
+
+1. 在 `src/content/config.ts` 中新增 `katex` 的配置项：
+
+```typescript
+import { SITE } from "@config";
+import { defineCollection, z } from "astro:content";
+
+const blog = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      author: z.string().default(SITE.author),
+      ......
+      canonicalURL: z.string().optional(),
+      katex: z.boolean().default(false), // Add this line
+    }),
+});
+
+export const collections = { blog };
+```
+
+1. 在 `src/layouts/PostDetails.astro` 中给文章添加 katex 属性，并赋给 `layoutProps`，最终传给 `Layout.astro` 组件以控制是否加载 KaTeX 的相关资源：
+
+```astro
+......
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+
+const {
+  title,
+  ......
+  tags,
+  katex, // Add this line
+} = post.data;
+
+const layoutProps = {
+  title: `${title} | ${SITE.title}`,
+  ......
+  scrollSmooth: true,
+  katex, // Add this line
+};
+```
+
+3. 在 `src/layouts/Layout.astro` 中根据 `katex` 属性的值来决定是否加载 KaTeX 的相关资源：
+
+```astro
+<!-- KaTeX -->
+{
+  katex && (
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous"
+    />
+  )
+}
+```
+
+1. 可选。修改 `.vscode/astro-paper.code-snippets`，在 VS Code 中新增 KaTeX Frontmatter Snippet：
+
+```json
+{
+  "Frontmatter": {
+    "scope": "markdown",
+    "prefix": "frontmatter",
+    "body": [
+      "---",
+      "author: $1",
+      ......
+      "tags:",
+      "  - $7",
+      "description: $8",
+      "katex: ${9|false,true|}", // Add this line
+      "---",
+    ],
+    "description": "Adds the frontmatter block for the AstroPaper Blog post"
+  },
+  ......
+}
