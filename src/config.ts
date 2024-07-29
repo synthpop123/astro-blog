@@ -55,6 +55,13 @@ export const SOCIALS: SocialObjects = [
     footeractive: true,
   },
   {
+    name: "Mastodon",
+    href: "https://mastodon.social/@lkw123",
+    linkTitle: `${SITE.author} on Mastodon`,
+    active: true,
+    footeractive: false,
+  },
+  {
     name: "Twitter",
     href: "https://x.com/whoamamamiii",
     linkTitle: `${SITE.author} on Twitter`,
@@ -158,12 +165,5 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.author} on Telegram`,
     active: true,
     footeractive: true,
-  },
-  {
-    name: "Mastodon",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.author} on Mastodon`,
-    active: false,
-    footeractive: false,
   },
 ];
