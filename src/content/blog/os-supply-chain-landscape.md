@@ -5,6 +5,7 @@ title: 操作系统软件供应链构建与风险追踪
 slug: os-supply-chain-landscape
 featured: false
 draft: false
+katex: true
 tags:
   - Linux
   - Security

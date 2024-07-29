@@ -4,6 +4,7 @@ pubDatetime: 2021-05-07T10:00:00+08:00
 title: 摊还分析 Amortized Analysis
 slug: amortized-analysis
 featured: false
+katex: true
 tags:
   - Algorithm
 description: "Introduction to Amortized Analysis: a method for analyzing the average time of all operations in a sequence"

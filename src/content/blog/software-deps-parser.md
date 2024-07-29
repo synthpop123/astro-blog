@@ -5,6 +5,7 @@ pubDatetime: 2023-06-15T15:00:00+08:00
 slug: software-deps-parser
 featured: false
 draft: false
+katex: true
 tags:
   - Linux
   - OSS
