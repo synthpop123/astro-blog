@@ -76,7 +76,7 @@ PS：KaTeX 的这个套件的 `strict` 参数的预设值为 `warn`，也就是�
 
 ![AstroPaper 主题暗色模式下 KaTeX 渲染效果](@assets/images/astropaper-katex-dark-mode.jpg)
 
-因此，我们需要手动在 `src/layouts/PostDetails.astro` 中新增覆写相关 CSS 的处理：
+因此，我们需要手动在 `src/layouts/PostDetails.astro` 中新增相关 CSS 的处理：
 
 ```css
 /* Fix the dim color of KaTeX in dark mode */
@@ -85,7 +85,7 @@ PS：KaTeX 的这个套件的 `strict` 参数的预设值为 `warn`，也就是�
 }
 ```
 
-在进行本地构建后，`package.json` 和 `package-lock.json` 文件会自动修改。至此，AstroPaper 博客主题已支持 KaTeX 渲染。
+至此，AstroPaper 博客主题已支持 KaTeX 渲染。
 
 ## 可选：给博文新增 KaTeX Frontmatter 开关
 
@@ -113,7 +113,7 @@ const blog = defineCollection({
 export const collections = { blog };
 ```
 
-1. 在 `src/layouts/PostDetails.astro` 中给文章添加 katex 属性，并赋给 `layoutProps`，最终传给 `Layout.astro` 组件以控制是否加载 KaTeX 的相关资源：
+2. 在 `src/layouts/PostDetails.astro` 中给文章添加 katex 属性，并赋给 `layoutProps`，最终传给 `Layout.astro` 组件以控制是否加载 KaTeX 的相关资源：
 
 ```astro
 ......
@@ -155,7 +155,7 @@ const layoutProps = {
 }
 ```
 
-1. 可选。修改 `.vscode/astro-paper.code-snippets`，在 VS Code 中新增 KaTeX Frontmatter Snippet：
+4. 可选。修改 `.vscode/astro-paper.code-snippets`，在 VS Code 中新增 KaTeX Frontmatter Snippet：
 
 ```json
 {
