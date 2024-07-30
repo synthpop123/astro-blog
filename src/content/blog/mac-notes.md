@@ -85,6 +85,52 @@ killall Dock
 |  [fastfetch](https://github.com/fastfetch-cli/fastfetch)  |                  Like neofetch, but much faster because written mostly in C.                  | neofetch |
 |       [delta](https://github.com/dandavison/delta)        |                  A syntax-highlighting pager for git, diff, and grep output.                  |   diff   |
 
+### 终端利器 Fzf
+
+在日常的 shell 环境中，可以通过 Fzf + Ripgrep + Bat + Vim 来提升效率，方便地管理文件及其内容。
+
+* 文件查询:
+  
+  调用 Fzf 进行文件查找，并使用 Bat 在右侧窗口预览选中文件的前 500 行内容。可以通过 Shift+Up 和 Shift+Down 翻页，快速浏览文件内容。
+
+  ```shell
+  alias pf='fzf --preview='\''bat --color=always --style=header,grid --line-range \
+        :500 {}'\'' --bind shift-up:preview-page-up,shift-down:preview-page-down'
+  ```
+
+  如下图所示：
+
+  ![](@assets/images/pf_screenshot.webp)
+
+* 内容查询:
+  
+  使用 Ripgrep 搜索文件内容，并结合 Fzf 进行模糊匹配搜索。搜索结果将实时展示在 Fzf 窗口中，并通过 Bat 预览文件的相关内容。绑定按键 Enter 键和 Ctrl+O 键以实现在 Vim 中打开搜索结果，进行进一步的编辑。
+
+  ```shell
+  rfv() (
+    RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+    OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+              vim {1} +{2}     # No selection. Open the current line in Vim.
+            else
+              vim +cw -q {+f}  # Build quickfix list for the selected items.
+            fi'
+    fzf --disabled --ansi --multi \
+        --bind "start:$RELOAD" --bind "change:$RELOAD" \
+        --bind "enter:become:$OPENER" \
+        --bind "ctrl-o:execute:$OPENER" \
+        --delimiter : \
+        --preview 'bat --style=header,grid --color=always --line-range :500 --highlight-line {2} {1} \
+        --preview-window '~4,+{2}+4/3,<80(up)' \
+        --query "$*"
+  )
+  ```
+
+  如下图所示：
+
+  ![](@assets/images/rfv_screenshot.webp)
+
+可以将以上内容添加至 `~/.zshrc` 文件中，从而构建一个更加高效的命令行 Workflow。
+
 ### Zsh 配置
 
 常用的 [Oh My Zsh](https://ohmyz.sh/) 对于我来说略显臃肿，因此我选择使用 [zinit](https://github.com/zdharma-continuum/zinit) 来管理插件。
