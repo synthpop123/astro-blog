@@ -5,7 +5,7 @@ modDatetime: 2024-07-29
 title: Rust 学习笔记
 slug: rust-notes
 featured: false
-draft: false
+draft: true
 tags:
   - Rust
 description: "Learning Rust: Basic ideas, installation, and crates.io mirror"
