@@ -1,7 +1,7 @@
 ---
 author: lkw123
 pubDatetime: 2024-03-05T10:00:00+08:00
-modDatetime: 2024-07-30
+modDatetime: 2024-08-03
 title: 我的 MacOS 开发环境配置
 slug: macos-dev-setup
 featured: true
@@ -91,7 +91,7 @@ killall Dock
 
 * 文件查询:
   
-  调用 Fzf 进行文件查找，并使用 Bat 在右侧窗口预览选中文件的前 500 行内容。可以通过 Shift+Up 和 Shift+Down 翻页，快速浏览文件内容。
+  使用 pf (preview file) 别名快速预览和选择文件。调用 Fzf 进行交互式模糊查找，并使用 Bat 在右侧窗口实现语法高亮，预览选中文件的前 500 行内容。可以通过 Shift+Up 和 Shift+Down 翻页，提高效率。
 
   ```shell
   alias pf='fzf --preview='\''bat --color=always --style=header,grid --line-range \
@@ -104,7 +104,7 @@ killall Dock
 
 * 内容查询:
   
-  使用 Ripgrep 搜索文件内容，并结合 Fzf 进行模糊匹配搜索。搜索结果将实时展示在 Fzf 窗口中，并通过 Bat 预览文件的相关内容。绑定按键 Enter 键和 Ctrl+O 键以实现在 Vim 中打开搜索结果，进行进一步的编辑。
+  使用 rfv (ripgrep-fzf-vim) 函数进行全文内容搜索并在 Vim 中打开结果。搜索结果将实时展示在 Fzf 窗口中，并通过 Bat 预览文件的相关内容。绑定按键 Enter 键和 Ctrl+O 键以实现在 Vim 中打开搜索结果，便于进行进一步的编辑。
 
   ```shell
   rfv() (
