@@ -89,8 +89,8 @@ killall Dock
 
 在日常的 shell 环境中，可以通过 Fzf + Ripgrep + Bat + Vim 来提升效率，方便地管理文件及其内容。
 
-* 文件查询:
-  
+- 文件查询:
+
   使用 pf (preview file) 别名快速预览和选择文件。调用 Fzf 进行交互式模糊查找，并使用 Bat 在右侧窗口实现语法高亮，预览选中文件的前 500 行内容。可以通过 Shift+Up 和 Shift+Down 翻页，提高效率。
 
   ```shell
@@ -102,8 +102,8 @@ killall Dock
 
   ![](@assets/images/pf_screenshot.webp)
 
-* 内容查询:
-  
+- 内容查询:
+
   使用 rfv (ripgrep-fzf-vim) 函数进行全文内容搜索并在 Vim 中打开结果。搜索结果将实时展示在 Fzf 窗口中，并通过 Bat 预览文件的相关内容。绑定按键 Enter 键和 Ctrl+O 键以实现在 Vim 中打开搜索结果，便于进行进一步的编辑。
 
   ```shell
