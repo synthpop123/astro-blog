@@ -27,6 +27,13 @@ export const LOGO_IMAGE = {
 
 export const SOCIALS: SocialObjects = [
   {
+    name: "Homepage",
+    href: "https://www.lkwplus.com/",
+    linkTitle: `${SITE.author}'s Homepage`,
+    active: true,
+    footeractive: true,
+  },
+  {
     name: "Github",
     href: "https://github.com/synthpop123",
     linkTitle: `${SITE.author} on Github`,
@@ -66,7 +73,7 @@ export const SOCIALS: SocialObjects = [
     href: "https://t.me/lkwtg",
     linkTitle: `${SITE.author} on Telegram`,
     active: true,
-    footeractive: true,
+    footeractive: false,
   },
   {
     name: "Instagram",
