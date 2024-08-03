@@ -116,12 +116,6 @@ export const collections = { blog };
 2. 在 `src/layouts/PostDetails.astro` 中给文章添加 katex 属性，并赋给 `layoutProps`，最终传给 `Layout.astro` 组件以控制是否加载 KaTeX 的相关资源：
 
 ```astro
-......
-
-export interface Props {
-  post: CollectionEntry<"blog">;
-}
-
 const { post } = Astro.props;
 
 const {
@@ -176,3 +170,4 @@ const layoutProps = {
   },
   ......
 }
+```
