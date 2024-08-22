@@ -120,16 +120,16 @@ const { post } = Astro.props;
 
 const {
   title,
-  ......
+  // ......
   tags,
-  katex, // Add this line
+  katex // Add this line
 } = post.data;
 
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
-  ......
+  // ......
   scrollSmooth: true,
-  katex, // Add this line
+  katex // Add this line
 };
 ```
 
@@ -159,7 +159,7 @@ const layoutProps = {
     "body": [
       "---",
       "author: $1",
-      ......
+      // ......
       "tags:",
       "  - $7",
       "description: $8",
@@ -168,6 +168,6 @@ const layoutProps = {
     ],
     "description": "Adds the frontmatter block for the AstroPaper Blog post"
   },
-  ......
+  // ......
 }
 ```
