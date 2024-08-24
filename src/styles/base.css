@@ -13,8 +13,8 @@
     --color-border: 236, 233, 233;
   }
   html[data-theme="dark"] {
-    --color-fill: 27, 32, 37;
-    --color-text-base: 234, 237, 243;
+    --color-fill: 26, 28, 27;
+    --color-text-base: 227, 227, 227;
     --color-accent: 217, 122, 72;
     --color-card: 52, 63, 96;
     --color-card-muted: 138, 51, 2;
