@@ -34,3 +34,5 @@ INTP (**I** **N**eed **T**o slee**P**)
 
 - This site is powered by [Cloudflare Pages](https://pages.cloudflare.com/), source code can be found at [synthpop123/astro-blog](https://github.com/synthpop123/astro-blog). Credits to [AstroPaper](https://github.com/satnaing/astro-paper#readme). Thanks! ♥
 - All contents in this blog are published under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+<a href="https://astro.build"><img src="https://astro.badg.es/v2/built-with-astro/small.svg" alt="Built with Astro" width="192" height="32"></a>
