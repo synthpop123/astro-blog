@@ -55,7 +55,8 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        mono: ["Sono", "LXGW WenKai Screen", "monospace"]
+        mono: ["Sono", "LXGW WenKai Screen", "monospace"],
+        sans: ["LXGW WenKai Screen", "sans-serif"]
       },
 
       typography: {
