@@ -16,7 +16,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/rss": "^4.0.7",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^4.15.2",
+    "astro": "^4.15.7",
     "astro-font": "^0.1.81",
     "fuse.js": "^7.0.0",
     "lodash.kebabcase": "^4.1.1",
@@ -25,27 +25,27 @@
     "remark-math": "^6.0.0",
     "remark-toc": "^9.0.0",
     "rss-parser": "^3.13.0",
-    "satori": "^0.10.14",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "satori": "^0.11.1",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
   },
   "devDependencies": {
     "@astrojs/react": "^3.6.2",
     "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^5.1.1",
     "@tailwindcss/typography": "^0.5.15",
     "@types/lodash.kebabcase": "^4.1.9",
-    "@types/react": "^18.3.5",
-    "@typescript-eslint/parser": "^8.4.0",
-    "astro-eslint-parser": "^1.0.2",
-    "eslint": "^9.9.1",
-    "eslint-plugin-astro": "^1.2.3",
+    "@types/react": "^18.3.7",
+    "@typescript-eslint/parser": "^8.6.0",
+    "astro-eslint-parser": "^1.0.3",
+    "eslint": "^9.10.0",
+    "eslint-plugin-astro": "^1.2.4",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript-eslint": "^8.4.0"
+    "typescript-eslint": "^8.6.0"
   }
 }
